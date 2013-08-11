@@ -1,0 +1,5 @@
+*.csproj
+*.suo
+bin
+Debug
+Release
