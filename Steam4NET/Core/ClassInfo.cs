@@ -87,7 +87,7 @@ namespace Steam4NET.Core
             }
 
             int size = Marshal.SizeOf(Type);
-            return Type != typeof(UInt64) && size > IntPtr.Size; // TODO: investigate
+            return Type != typeof(UInt64) && size > 4; // TODO: investigate
         }
     }
 
