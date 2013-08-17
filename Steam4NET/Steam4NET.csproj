@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{092EAD98-F052-4F72-8C29-8ED93A5936AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Steam4NET</RootNamespace>
+    <AssemblyName>Steam4NET</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\CallbackIdentityAttribute.cs" />
+    <Compile Include="Attributes\InterfaceVersionAttribute.cs" />
+    <Compile Include="Attributes\NativeTypeAttribute.cs" />
+    <Compile Include="Attributes\VTableSlotAttribute.cs" />
+    <Compile Include="Autogen\AppsCommon.cs" />
+    <Compile Include="Autogen\BillingCommon.cs" />
+    <Compile Include="Autogen\CGameID.cs" />
+    <Compile Include="Autogen\ClientCommon.cs" />
+    <Compile Include="Autogen\ContentServerCommon.cs" />
+    <Compile Include="Autogen\CSteamID.cs" />
+    <Compile Include="Autogen\ECurrencyCode.cs" />
+    <Compile Include="Autogen\EResult.cs" />
+    <Compile Include="Autogen\ESteamAppUpdateStatsQueryType.cs" />
+    <Compile Include="Autogen\ESteamBufferMethod.cs" />
+    <Compile Include="Autogen\ESteamError.cs" />
+    <Compile Include="Autogen\ESteamFindFilter.cs" />
+    <Compile Include="Autogen\ESteamNotify.cs" />
+    <Compile Include="Autogen\ESteamPaymentCardType.cs" />
+    <Compile Include="Autogen\ESteamSeekMethod.cs" />
+    <Compile Include="Autogen\ESteamServerType.cs" />
+    <Compile Include="Autogen\ESteamSubscriptionBillingInfoType.cs" />
+    <Compile Include="Autogen\ESteamSubscriptionStatus.cs" />
+    <Compile Include="Autogen\EVoiceResult.cs" />
+    <Compile Include="Autogen\FriendGameInfo.cs" />
+    <Compile Include="Autogen\FriendsCommon.cs" />
+    <Compile Include="Autogen\GameCoordinatorCommon.cs" />
+    <Compile Include="Autogen\GameServerCommon.cs" />
+    <Compile Include="Autogen\gameserveritem.cs" />
+    <Compile Include="Autogen\GameServerStatsCommon.cs" />
+    <Compile Include="Autogen\GameStatsCommon.cs" />
+    <Compile Include="Autogen\HTTPCommon.cs" />
+    <Compile Include="Autogen\IClientAppManager.cs" />
+    <Compile Include="Autogen\IClientApps.cs" />
+    <Compile Include="Autogen\IClientAudio.cs" />
+    <Compile Include="Autogen\IClientBilling.cs" />
+    <Compile Include="Autogen\IClientConfigStore.cs" />
+    <Compile Include="Autogen\IClientContentServer.cs" />
+    <Compile Include="Autogen\IClientDepotBuilder.cs" />
+    <Compile Include="Autogen\IClientDeviceAuth.cs" />
+    <Compile Include="Autogen\IClientEngine.cs" />
+    <Compile Include="Autogen\IClientFriends.cs" />
+    <Compile Include="Autogen\IClientGameCoordinator.cs" />
+    <Compile Include="Autogen\IClientGameServer.cs" />
+    <Compile Include="Autogen\IClientGameServerStats.cs" />
+    <Compile Include="Autogen\IClientGameStats.cs" />
+    <Compile Include="Autogen\IClientHTTP.cs" />
+    <Compile Include="Autogen\IClientMasterServerUpdater.cs" />
+    <Compile Include="Autogen\IClientMatchmaking.cs" />
+    <Compile Include="Autogen\IClientMatchmakingServers.cs" />
+    <Compile Include="Autogen\IClientNetworkDeviceManager.cs" />
+    <Compile Include="Autogen\IClientNetworking.cs" />
+    <Compile Include="Autogen\IClientRemoteStorage.cs" />
+    <Compile Include="Autogen\IClientScreenshots.cs" />
+    <Compile Include="Autogen\IClientStreamLauncher.cs" />
+    <Compile Include="Autogen\IClientUnifiedMessages.cs" />
+    <Compile Include="Autogen\IClientUser.cs" />
+    <Compile Include="Autogen\IClientUserStats.cs" />
+    <Compile Include="Autogen\IClientUtils.cs" />
+    <Compile Include="Autogen\ISteam003.cs" />
+    <Compile Include="Autogen\ISteam004.cs" />
+    <Compile Include="Autogen\ISteam005.cs" />
+    <Compile Include="Autogen\ISteam006.cs" />
+    <Compile Include="Autogen\ISteam2Bridge001.cs" />
+    <Compile Include="Autogen\ISteam2Bridge002.cs" />
+    <Compile Include="Autogen\ISteamApps001.cs" />
+    <Compile Include="Autogen\ISteamApps002.cs" />
+    <Compile Include="Autogen\ISteamApps003.cs" />
+    <Compile Include="Autogen\ISteamApps004.cs" />
+    <Compile Include="Autogen\ISteamApps005.cs" />
+    <Compile Include="Autogen\ISteamAppTicket001.cs" />
+    <Compile Include="Autogen\ISteamBilling001.cs" />
+    <Compile Include="Autogen\ISteamBilling002.cs" />
+    <Compile Include="Autogen\ISteamClient006.cs" />
+    <Compile Include="Autogen\ISteamClient007.cs" />
+    <Compile Include="Autogen\ISteamClient008.cs" />
+    <Compile Include="Autogen\ISteamClient009.cs" />
+    <Compile Include="Autogen\ISteamClient010.cs" />
+    <Compile Include="Autogen\ISteamClient011.cs" />
+    <Compile Include="Autogen\ISteamClient012.cs" />
+    <Compile Include="Autogen\ISteamContentServer001.cs" />
+    <Compile Include="Autogen\ISteamContentServer002.cs" />
+    <Compile Include="Autogen\ISteamFriends001.cs" />
+    <Compile Include="Autogen\ISteamFriends002.cs" />
+    <Compile Include="Autogen\ISteamFriends003.cs" />
+    <Compile Include="Autogen\ISteamFriends004.cs" />
+    <Compile Include="Autogen\ISteamFriends005.cs" />
+    <Compile Include="Autogen\ISteamFriends006.cs" />
+    <Compile Include="Autogen\ISteamFriends007.cs" />
+    <Compile Include="Autogen\ISteamFriends008.cs" />
+    <Compile Include="Autogen\ISteamFriends009.cs" />
+    <Compile Include="Autogen\ISteamFriends010.cs" />
+    <Compile Include="Autogen\ISteamFriends011.cs" />
+    <Compile Include="Autogen\ISteamFriends012.cs" />
+    <Compile Include="Autogen\ISteamFriends013.cs" />
+    <Compile Include="Autogen\ISteamGameCoordinator001.cs" />
+    <Compile Include="Autogen\ISteamGameServer002.cs" />
+    <Compile Include="Autogen\ISteamGameServer003.cs" />
+    <Compile Include="Autogen\ISteamGameServer004.cs" />
+    <Compile Include="Autogen\ISteamGameServer005.cs" />
+    <Compile Include="Autogen\ISteamGameServer006.cs" />
+    <Compile Include="Autogen\ISteamGameServer007.cs" />
+    <Compile Include="Autogen\ISteamGameServer008.cs" />
+    <Compile Include="Autogen\ISteamGameServer009.cs" />
+    <Compile Include="Autogen\ISteamGameServer010.cs" />
+    <Compile Include="Autogen\ISteamGameServer011.cs" />
+    <Compile Include="Autogen\ISteamGameServerStats001.cs" />
+    <Compile Include="Autogen\ISteamGameStats001.cs" />
+    <Compile Include="Autogen\ISteamHTTP001.cs" />
+    <Compile Include="Autogen\ISteamHTTP002.cs" />
+    <Compile Include="Autogen\ISteamMasterServerUpdater001.cs" />
+    <Compile Include="Autogen\ISteamMatchmaking001.cs" />
+    <Compile Include="Autogen\ISteamMatchmaking002.cs" />
+    <Compile Include="Autogen\ISteamMatchmaking003.cs" />
+    <Compile Include="Autogen\ISteamMatchmaking004.cs" />
+    <Compile Include="Autogen\ISteamMatchmaking005.cs" />
+    <Compile Include="Autogen\ISteamMatchmaking006.cs" />
+    <Compile Include="Autogen\ISteamMatchmaking007.cs" />
+    <Compile Include="Autogen\ISteamMatchmaking008.cs" />
+    <Compile Include="Autogen\ISteamMatchmaking009.cs" />
+    <Compile Include="Autogen\ISteamMatchmakingServers001.cs" />
+    <Compile Include="Autogen\ISteamMatchmakingServers002.cs" />
+    <Compile Include="Autogen\ISteamNetworking001.cs" />
+    <Compile Include="Autogen\ISteamNetworking002.cs" />
+    <Compile Include="Autogen\ISteamNetworking003.cs" />
+    <Compile Include="Autogen\ISteamNetworking004.cs" />
+    <Compile Include="Autogen\ISteamNetworking005.cs" />
+    <Compile Include="Autogen\ISteamOAuth001.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage001.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage002.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage003.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage004.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage005.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage006.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage007.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage008.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage009.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage010.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage011.cs" />
+    <Compile Include="Autogen\ISteamRemoteStorage012.cs" />
+    <Compile Include="Autogen\ISteamScreenshots001.cs" />
+    <Compile Include="Autogen\ISteamScreenshots002.cs" />
+    <Compile Include="Autogen\ISteamStreamLauncher001.cs" />
+    <Compile Include="Autogen\ISteamUnifiedMessages001.cs" />
+    <Compile Include="Autogen\ISteamUser004.cs" />
+    <Compile Include="Autogen\ISteamUser005.cs" />
+    <Compile Include="Autogen\ISteamUser006.cs" />
+    <Compile Include="Autogen\ISteamUser007.cs" />
+    <Compile Include="Autogen\ISteamUser008.cs" />
+    <Compile Include="Autogen\ISteamUser009.cs" />
+    <Compile Include="Autogen\ISteamUser010.cs" />
+    <Compile Include="Autogen\ISteamUser011.cs" />
+    <Compile Include="Autogen\ISteamUser012.cs" />
+    <Compile Include="Autogen\ISteamUser013.cs" />
+    <Compile Include="Autogen\ISteamUser014.cs" />
+    <Compile Include="Autogen\ISteamUser015.cs" />
+    <Compile Include="Autogen\ISteamUser016.cs" />
+    <Compile Include="Autogen\ISteamUserStats001.cs" />
+    <Compile Include="Autogen\ISteamUserStats002.cs" />
+    <Compile Include="Autogen\ISteamUserStats003.cs" />
+    <Compile Include="Autogen\ISteamUserStats004.cs" />
+    <Compile Include="Autogen\ISteamUserStats005.cs" />
+    <Compile Include="Autogen\ISteamUserStats006.cs" />
+    <Compile Include="Autogen\ISteamUserStats007.cs" />
+    <Compile Include="Autogen\ISteamUserStats008.cs" />
+    <Compile Include="Autogen\ISteamUserStats009.cs" />
+    <Compile Include="Autogen\ISteamUserStats010.cs" />
+    <Compile Include="Autogen\ISteamUserStats011.cs" />
+    <Compile Include="Autogen\ISteamUtils001.cs" />
+    <Compile Include="Autogen\ISteamUtils002.cs" />
+    <Compile Include="Autogen\ISteamUtils003.cs" />
+    <Compile Include="Autogen\ISteamUtils004.cs" />
+    <Compile Include="Autogen\ISteamUtils005.cs" />
+    <Compile Include="Autogen\ISteamUtils006.cs" />
+    <Compile Include="Autogen\MatchmakingCommon.cs" />
+    <Compile Include="Autogen\MatchMakingKeyValuePair.cs" />
+    <Compile Include="Autogen\MatchmakingServersCommon.cs" />
+    <Compile Include="Autogen\NetworkingCommon.cs" />
+    <Compile Include="Autogen\RemoteStorageCommon.cs" />
+    <Compile Include="Autogen\ScreenshotsCommon.cs" />
+    <Compile Include="Autogen\servernetadr.cs" />
+    <Compile Include="Autogen\Steamclient.cs" />
+    <Compile Include="Autogen\SteamSalt.cs" />
+    <Compile Include="Autogen\SteamTypes.cs" />
+    <Compile Include="Autogen\StreamLauncherCommon.cs" />
+    <Compile Include="Autogen\TSteamApp.cs" />
+    <Compile Include="Autogen\TSteamAppDependencyInfo.cs" />
+    <Compile Include="Autogen\TSteamAppLaunchOption.cs" />
+    <Compile Include="Autogen\TSteamAppStats.cs" />
+    <Compile Include="Autogen\TSteamAppVersion.cs" />
+    <Compile Include="Autogen\TSteamDiscountQualifier.cs" />
+    <Compile Include="Autogen\TSteamElemInfo.cs" />
+    <Compile Include="Autogen\TSteamError.cs" />
+    <Compile Include="Autogen\TSteamExternalBillingInfo.cs" />
+    <Compile Include="Autogen\TSteamGlobalUserID.cs" />
+    <Compile Include="Autogen\TSteamOfflineStatus.cs" />
+    <Compile Include="Autogen\TSteamPaymentCardInfo.cs" />
+    <Compile Include="Autogen\TSteamPaymentCardReceiptInfo.cs" />
+    <Compile Include="Autogen\TSteamPrepurchaseInfo.cs" />
+    <Compile Include="Autogen\TSteamPrepurchaseReceiptInfo.cs" />
+    <Compile Include="Autogen\TSteamProgress.cs" />
+    <Compile Include="Autogen\TSteamSplitLocalUserID.cs" />
+    <Compile Include="Autogen\TSteamSubscription.cs" />
+    <Compile Include="Autogen\TSteamSubscriptionBillingInfo.cs" />
+    <Compile Include="Autogen\TSteamSubscriptionDiscount.cs" />
+    <Compile Include="Autogen\TSteamSubscriptionReceipt.cs" />
+    <Compile Include="Autogen\TSteamSubscriptionStats.cs" />
+    <Compile Include="Autogen\TSteamUpdateStats.cs" />
+    <Compile Include="Autogen\UserCommon.cs" />
+    <Compile Include="Autogen\UserStatsCommon.cs" />
+    <Compile Include="Autogen\UtilsCommon.cs" />
+    <Compile Include="CGameID.cs" />
+    <Compile Include="Core\InterfaceVersions.cs" />
+    <Compile Include="Core\ClassInfo.cs" />
+    <Compile Include="Core\InteropHelp.cs" />
+    <Compile Include="Core\JITEngine.cs" />
+    <Compile Include="CSteamID.cs" />
+    <Compile Include="GameID_t.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SteamID_t.cs" />
+    <Compile Include="Steamworks.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
