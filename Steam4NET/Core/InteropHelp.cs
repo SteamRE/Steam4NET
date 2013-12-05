@@ -36,7 +36,11 @@ namespace Steam4NET.Core
             if (str == null)
                 return IntPtr.Zero;
 
-            byte[] buffer = Encoding.UTF8.GetBytes(str);
+            var length = Encoding.UTF8.GetByteCount(str);
+            byte[] buffer = new byte[length + 1];
+
+            Encoding.UTF8.GetBytes(str, 0, str.Length, buffer, 0);
+
             IntPtr string_ptr = Marshal.AllocHGlobal(buffer.Length);
             Marshal.Copy(buffer, 0, string_ptr, buffer.Length);
 
