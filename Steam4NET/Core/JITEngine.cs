@@ -291,15 +291,14 @@ namespace Steam4NET.Core
 
                 if (typeInfo.IsStringClass || typeInfo.IsParams)
                 {
-                    LocalBuilder localString = ilgen.DeclareLocal(typeof(IntPtr));
+                    LocalBuilder localString = ilgen.DeclareLocal(typeof(GCHandle));
                     localString.SetLocalSymInfo("nativeString" + argindex);
 
                     state.unmanagedMemory.Add(localString);
 
                     // we need to specially marshal strings
+                    ilgen.Emit(OpCodes.Ldloca, localString.LocalIndex);
                     ilgen.EmitCall(OpCodes.Call, typeof(InteropHelp).GetMethod("EncodeUTF8String"), null);
-                    EmitPrettyStoreLocal(ilgen, localString.LocalIndex);
-                    EmitPrettyLoadLocal(ilgen, localString.LocalIndex);
                 }
                 else if (typeInfo.IsCreatableClass)
                 {
@@ -340,8 +339,8 @@ namespace Steam4NET.Core
             // clean up unmanaged memory
             foreach (LocalBuilder localbuilder in state.unmanagedMemory)
             {
-                EmitPrettyLoadLocal(ilgen, localbuilder.LocalIndex);
-                ilgen.EmitCall(OpCodes.Call, typeof(Marshal).GetMethod("FreeHGlobal"), null);
+                ilgen.Emit(OpCodes.Ldloca, localbuilder.LocalIndex);
+                ilgen.EmitCall(OpCodes.Call, typeof(InteropHelp).GetMethod("FreeString"), null);
             }
 
             if (state.ReturnTypeByStack)

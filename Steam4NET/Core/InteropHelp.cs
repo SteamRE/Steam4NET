@@ -8,6 +8,7 @@ namespace Steam4NET.Core
 {
     public class InteropHelp
     {
+        private static readonly GCHandle NullHandle = GCHandle.Alloc(new byte[0], GCHandleType.Pinned);
 
         /// <summary>
         /// Decodes IntPtr as if it were a UTF-8 string
@@ -31,20 +32,29 @@ namespace Steam4NET.Core
         /// <summary>
         /// Encodes string as an IntPtr
         /// </summary>
-        public static IntPtr EncodeUTF8String(string str)
+        public static IntPtr EncodeUTF8String(string str, out GCHandle handle)
         {
             if (str == null)
+            {
+                handle = NullHandle;
                 return IntPtr.Zero;
+            }
 
             var length = Encoding.UTF8.GetByteCount(str);
             byte[] buffer = new byte[length + 1];
 
             Encoding.UTF8.GetBytes(str, 0, str.Length, buffer, 0);
 
-            IntPtr string_ptr = Marshal.AllocHGlobal(buffer.Length);
-            Marshal.Copy(buffer, 0, string_ptr, buffer.Length);
+            handle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
+            return handle.AddrOfPinnedObject();
+        }
 
-            return string_ptr;
+        public static void FreeString(ref GCHandle handle)
+        {
+            if (handle == NullHandle)
+                return;
+
+            handle.Free();
         }
 
         public class BitVector64
