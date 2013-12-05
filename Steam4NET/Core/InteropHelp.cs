@@ -10,11 +10,37 @@ namespace Steam4NET.Core
     {
 
         /// <summary>
-        /// Decodes ANSI encoded return string to UTF-8
+        /// Decodes IntPtr as if it were a UTF-8 string
         /// </summary>
-        public static string DecodeANSIReturn(string buffer)
+        public static string DecodeUTF8String(IntPtr ptr)
         {
-            return Encoding.UTF8.GetString(Encoding.Default.GetBytes(buffer));
+            if (ptr == IntPtr.Zero)
+                return null;
+
+            int len = 0;
+            while (Marshal.ReadByte(ptr, len) != 0) len++;
+
+            if (len == 0)
+                return string.Empty;
+
+            byte[] buffer = new byte[len];
+            Marshal.Copy(ptr, buffer, 0, buffer.Length);
+            return Encoding.UTF8.GetString(buffer);
+        }
+
+        /// <summary>
+        /// Encodes string as an IntPtr
+        /// </summary>
+        public static IntPtr EncodeUTF8String(string str)
+        {
+            if (str == null)
+                return IntPtr.Zero;
+
+            byte[] buffer = Encoding.UTF8.GetBytes(str);
+            IntPtr string_ptr = Marshal.AllocHGlobal(buffer.Length);
+            Marshal.Copy(buffer, 0, string_ptr, buffer.Length);
+
+            return string_ptr;
         }
 
         public class BitVector64

@@ -195,12 +195,12 @@ namespace Steam4NET.Core
 
                 state.MethodArgs.Add(typeInfo.Type);
 
-                /*if (typeInfo.IsStringClass)
+                if (typeInfo.IsStringClass)
                 {
                     // we need to specially marshal strings
                     state.NativeArgs.Add(typeof(IntPtr));
                 }
-                else*/
+                else
                 if (!typeInfo.IsParams)
                 {
                     if (typeInfo.IsByRef && typeInfo.NativeType.IsValueType)
@@ -289,7 +289,7 @@ namespace Steam4NET.Core
                     ilgen.EmitCall(OpCodes.Call, typeof(String).GetMethod("Format", BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(string), typeof(object[]) }, null), null);
                 }
 
-                /*if (typeInfo.IsStringClass || typeInfo.IsParams)
+                if (typeInfo.IsStringClass || typeInfo.IsParams)
                 {
                     LocalBuilder localString = ilgen.DeclareLocal(typeof(IntPtr));
                     localString.SetLocalSymInfo("nativeString" + argindex);
@@ -297,12 +297,11 @@ namespace Steam4NET.Core
                     state.unmanagedMemory.Add(localString);
 
                     // we need to specially marshal strings
-                    ilgen.EmitCall(OpCodes.Call, typeof(Marshal).GetMethod("StringToHGlobalAnsi"), null);
+                    ilgen.EmitCall(OpCodes.Call, typeof(InteropHelp).GetMethod("EncodeUTF8String"), null);
                     EmitPrettyStoreLocal(ilgen, localString.LocalIndex);
                     EmitPrettyLoadLocal(ilgen, localString.LocalIndex);
                 }
-                else*/
-                if (typeInfo.IsCreatableClass)
+                else if (typeInfo.IsCreatableClass)
                 {
                     // if this argument is a class we understand: get the object pointer
                     ilgen.Emit(OpCodes.Ldfld, addressAssistant);
@@ -376,8 +375,7 @@ namespace Steam4NET.Core
             else if (method.ReturnType.IsStringClass)
             {
                 // marshal string return
-                ilgen.EmitCall(OpCodes.Call, typeof(Marshal).GetMethod("PtrToStringAnsi", new Type[] { typeof(IntPtr) }), null);
-                ilgen.EmitCall(OpCodes.Call, typeof(InteropHelp).GetMethod("DecodeANSIReturn"), null);
+                ilgen.EmitCall(OpCodes.Call, typeof(InteropHelp).GetMethod("DecodeUTF8String"), null);
             }
 
             ilgen.Emit(OpCodes.Ret);

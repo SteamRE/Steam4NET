@@ -152,6 +152,12 @@ namespace Steam4Test
                 Console.WriteLine("userstats010 is null !");
                 return -1;
             }
+            ISteamFriends013 steamfriends013 = steamclient.GetISteamFriends<ISteamFriends013>(user, pipe);
+            if (steamfriends013 == null)
+            {
+                Console.WriteLine("steamfriends013 is null !");
+                return -1;
+            }
             IClientUser clientuser = clientengine.GetIClientUser<IClientUser>(user, pipe);
             if (clientuser == null)
             {
@@ -338,6 +344,13 @@ namespace Steam4Test
 
             Marshal.FreeHGlobal(pData);
 
+            var friends = steamfriends013.GetFriendCount((int)EFriendFlags.k_EFriendFlagAll);
+            for (int i = 0; i < friends; i++)
+            {
+                var friendid = steamfriends013.GetFriendByIndex(i, (int)EFriendFlags.k_EFriendFlagAll);
+                var name = steamfriends013.GetFriendPersonaName(friendid);
+                Console.WriteLine("Friend {0}: {1}", i, name);
+            }
             return 0;
         }
     }
