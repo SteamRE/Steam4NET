@@ -57,30 +57,56 @@ namespace Steam4NET
 		[VTableSlot(22)]
 		bool SignalAppsToShutDown();
 		[VTableSlot(23)]
-		UInt32 GetCellID();
+		bool TerminateAllAppsMultiStep(UInt32 uUnk);
 		[VTableSlot(24)]
-		bool BIsGlobalInstance();
+		UInt32 GetCellID();
 		[VTableSlot(25)]
-		UInt64 CheckFileSignature(string szFileName);
+		bool BIsGlobalInstance();
 		[VTableSlot(26)]
-		UInt64 GetBuildID();
+		UInt64 CheckFileSignature(string szFileName);
 		[VTableSlot(27)]
-		void SetCurrentUIMode(EUIMode eUIMode);
+		UInt64 GetBuildID();
 		[VTableSlot(28)]
-		bool ShowGamepadTextInput(EGamepadTextInputMode eInputMode, EGamepadTextInputLineMode eInputLineMode, string szText, UInt32 uMaxLength);
+		void SetCurrentUIMode(EUIMode eUIMode);
 		[VTableSlot(29)]
-		UInt32 GetEnteredGamepadTextLength();
+		void SetLauncherType(ELauncherType eLauncherType);
 		[VTableSlot(30)]
-		bool GetEnteredGamepadTextInput(StringBuilder pchValue, UInt32 cchValueMax);
+		ELauncherType GetLauncherType();
 		[VTableSlot(31)]
-		void GamepadTextInputClosed(Int32 hSteamPipe, bool arg1, string arg2);
+		bool ShowGamepadTextInput(EGamepadTextInputMode eInputMode, EGamepadTextInputLineMode eInputLineMode, string szText, UInt32 uMaxLength, string szUnk);
 		[VTableSlot(32)]
-		void SetSpew(ESpewGroup eSpewGroup, Int32 iSpewLevel, Int32 iLogLevel);
+		UInt32 GetEnteredGamepadTextLength();
 		[VTableSlot(33)]
-		bool BDownloadsDisabled();
+		bool GetEnteredGamepadTextInput(StringBuilder pchValue, UInt32 cchValueMax);
 		[VTableSlot(34)]
-		void SetFocusedWindow(EWindowType eWindowType, UInt32 uUnk);
+		void GamepadTextInputClosed(Int32 hSteamPipe, bool arg1, string arg2);
 		[VTableSlot(35)]
+		void SetSpew(ESpewGroup eSpewGroup, Int32 iSpewLevel, Int32 iLogLevel);
+		[VTableSlot(36)]
+		bool BDownloadsDisabled();
+		[VTableSlot(37)]
+		void SetFocusedWindow(EWindowType eWindowType, CGameID gameID, UInt64 ulUnk);
+		[VTableSlot(38)]
 		string GetSteamUILanguage();
+		[VTableSlot(39)]
+		UInt64 CheckSteamReachable();
+		[VTableSlot(40)]
+		void SetLastGameLaunchMethod(EGameLaunchMethod eGameLaunchMethod);
+		[VTableSlot(41)]
+		bool IsSteamOS();
+		[VTableSlot(42)]
+		void SetVideoAdapterInfo(Int32 arg0, Int32 arg1, Int32 arg2, Int32 arg3, Int32 arg4);
+		[VTableSlot(43)]
+		void SetControllerOVerrideMode(EWindowType eWindowType, CGameID gameID, string szUnk);
+		[VTableSlot(44)]
+		void SetOverlayWindowFocusForPipe(bool arg0, bool arg1, CGameID gameID);
+		[VTableSlot(45)]
+		CGameID GetGameOverlayUIInstanceFocusGameID(ref bool pbUnk);
+		[VTableSlot(46)]
+		bool SetControllerConfigFileForAppID(UInt32 unAppID, string pszControllerConfigFile);
+		[VTableSlot(47)]
+		bool GetControllerConfigFileForAppID(UInt32 unAppID, string pszControllerConfigFile, UInt32 cubControllerConfigFile);
+		[VTableSlot(48)]
+		bool IsSteamRunningInVR();
 	};
 }

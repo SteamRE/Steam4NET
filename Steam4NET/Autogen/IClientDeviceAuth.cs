@@ -15,14 +15,24 @@ namespace Steam4NET
 		[VTableSlot(1)]
 		UInt64 DeauthorizeLocalDevice(UInt32 uUnk);
 		[VTableSlot(2)]
-		UInt32 GetDeviceAuthorizations(ref UInt64 puUnk, UInt32 uUnk);
+		UInt64 DeauthorizeRemoteDevice(UInt64 uUnk);
 		[VTableSlot(3)]
-		bool GetDeviceAuthorizationInfo(UInt64 uUnk, ref UInt32 puUnk1, ref UInt32 puUnk2, ref UInt32 puUnk3, ref bool pbUnk, StringBuilder pszUnk1, Int32 iUnk1, StringBuilder pszUnk2, Int32 iUnk2, StringBuilder pszUnk3, Int32 iUnk3);
+		UInt64 RequestAuthorizationInfos();
 		[VTableSlot(4)]
-		UInt64 RequestAuthorizedDevicesInfo();
+		UInt32 GetDeviceAuthorizations(ref UInt64 arg0, UInt32 arg1, bool arg2);
 		[VTableSlot(5)]
-		bool BIsAuthorizedLender(UInt32 uUnk);
+		bool GetDeviceAuthorizationInfo(UInt64 arg0, ref UInt32 arg1, ref UInt32 arg2, ref bool arg3, StringBuilder arg4, Int32 arg5, StringBuilder arg6, Int32 arg7, StringBuilder arg8, Int32 arg9, ref UInt32 arg10);
 		[VTableSlot(6)]
+		UInt32 GetAuthorizedBorrowsers(ref UInt32 arg0, UInt32 arg1);
+		[VTableSlot(7)]
+		UInt32 GetLocalUsers(ref UInt32 arg0, UInt32 arg1);
+		[VTableSlot(8)]
+		bool GetBorrowserInfo(UInt32 arg0, StringBuilder arg1, Int32 arg2, ref bool arg3);
+		[VTableSlot(9)]
+		UInt64 UpateAuthorizedBorrowers(ref UInt32 arg0, UInt32 arg1, bool arg2);
+		[VTableSlot(10)]
 		UInt32 GetSharedLibraryLockedBy(UInt32 uUnk);
+		[VTableSlot(11)]
+		UInt32 GetSharedLibraryOwners(ref UInt32 arg0, UInt32 arg1);
 	};
 }

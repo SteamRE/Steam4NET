@@ -7,8 +7,8 @@ using Steam4NET.Attributes;
 namespace Steam4NET
 {
 
-	[InterfaceVersion("SteamUtils006")]
-	public interface ISteamUtils006
+	[InterfaceVersion("SteamUtils007")]
+	public interface ISteamUtils007
 	{
 		[VTableSlot(0)]
 		UInt32 GetSecondsSinceAppActive();
@@ -51,7 +51,7 @@ namespace Steam4NET
 		[VTableSlot(19)]
 		UInt64 CheckFileSignature(string szFileName);
 		[VTableSlot(20)]
-		bool ShowGamepadTextInput(EGamepadTextInputMode eInputMode, EGamepadTextInputLineMode eInputLineMode, string szText, UInt32 uMaxLength);
+		bool ShowGamepadTextInput(EGamepadTextInputMode eInputMode, EGamepadTextInputLineMode eInputLineMode, string szText, UInt32 uMaxLength, string pUnk);
 		[VTableSlot(21)]
 		UInt32 GetEnteredGamepadTextLength();
 		[VTableSlot(22)]

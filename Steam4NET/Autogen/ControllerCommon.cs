@@ -13,4 +13,8 @@ namespace Steam4NET
 		public Int32 m_iPadding;
 	};
 	
+	public enum ESteamControllerPad : int
+	{
+	};
+	
 }

@@ -13,108 +13,132 @@ namespace Steam4NET
 		[VTableSlot(0)]
 		EAppUpdateError InstallApp(UInt32 unAppID, string cszAppDir, Int32 iBaseFolder, bool bLegacy);
 		[VTableSlot(1)]
-		EAppUpdateError ConvertFromSteam2(UInt32 unAppID, string cszPath);
-		[VTableSlot(2)]
 		EAppUpdateError UninstallApp(UInt32 unAppID, bool bComplete);
-		[VTableSlot(3)]
+		[VTableSlot(2)]
 		EAppUpdateError LaunchApp(UInt32 unAppID, UInt32 uLaunchOption, string pszUserArgs);
-		[VTableSlot(4)]
+		[VTableSlot(3)]
 		bool ShutdownApp(UInt32 unAppID, bool bForce);
-		[VTableSlot(5)]
+		[VTableSlot(4)]
 		EAppState GetAppInstallState(UInt32 unAppID);
-		[VTableSlot(6)]
+		[VTableSlot(5)]
 		UInt32 GetAppBuildID(UInt32 unAppID);
-		[VTableSlot(7)]
+		[VTableSlot(6)]
 		bool GetAppSizeOnDisk(UInt32 unAppID, ref UInt64 pullAppSize, ref UInt64 pullUnk);
-		[VTableSlot(8)]
+		[VTableSlot(7)]
 		UInt32 GetAppInstallDir(UInt32 unAppID, StringBuilder pchPath, UInt32 cchPath);
-		[VTableSlot(9)]
+		[VTableSlot(8)]
 		bool IsAppDlcInstalled(UInt32 unAppID, UInt32 unDLCAppID);
-		[VTableSlot(10)]
+		[VTableSlot(9)]
 		UInt32 GetNumInstalledApps();
-		[VTableSlot(11)]
+		[VTableSlot(10)]
 		UInt32 GetInstalledApps(ref UInt32 punAppIDs, UInt32 cAppIDsMax);
-		[VTableSlot(12)]
+		[VTableSlot(11)]
 		UInt32 GetAppDependency(UInt32 unAppID);
-		[VTableSlot(13)]
+		[VTableSlot(12)]
 		UInt32 GetDependentApps(UInt32 unAppID, ref UInt32 punAppIDs, Int32 cAppIDsMax);
-		[VTableSlot(14)]
+		[VTableSlot(13)]
 		UInt32 GetUpdateInfo(UInt32 unAppID, ref AppUpdateInfo_s pUpdateInfo);
-		[VTableSlot(15)]
+		[VTableSlot(14)]
 		bool SetContentLocked(UInt32 unAppID, bool bLockContent);
-		[VTableSlot(16)]
-		bool SetAppConfig(UInt32 unAppID, Byte[] pchBuffer, Int32 cbBuffer, bool bSharedKVSymbols);
-		[VTableSlot(17)]
+		[VTableSlot(15)]
 		Int32 GetAppConfigValue(UInt32 unAppID, string pchKey, StringBuilder pchValue, Int32 cchValueMax);
-		[VTableSlot(18)]
+		[VTableSlot(16)]
 		bool SetAppConfigValue(UInt32 unAppID, string pchKey, string pchValue);
-		[VTableSlot(19)]
+		[VTableSlot(17)]
 		bool BIsAppUpToDate(UInt32 unAppID);
-		[VTableSlot(20)]
+		[VTableSlot(18)]
 		UInt32 GetAvailableLaunchOptions(UInt32 unAppID, ref UInt32 puOptions, UInt32 cuOptionsMax);
-		[VTableSlot(21)]
+		[VTableSlot(19)]
 		UInt32 GetAvailableLanguages(UInt32 unAppID, bool arg1, StringBuilder pchLanguages, UInt32 cchLanguagesMax);
-		[VTableSlot(22)]
+		[VTableSlot(20)]
 		bool StartValidatingApp(UInt32 unAppID);
-		[VTableSlot(23)]
+		[VTableSlot(21)]
+		bool CancelValidation(UInt32 unAppID);
+		[VTableSlot(22)]
 		bool MarkContentCorrupt(UInt32 unAppID, bool bCorrupt);
-		[VTableSlot(24)]
+		[VTableSlot(23)]
 		UInt32 GetInstalledDepots(UInt32 unAppID, ref UInt32 puDepots, UInt32 cuDepotsMax);
-		[VTableSlot(25)]
+		[VTableSlot(24)]
 		bool BCacheBetaPassword(UInt32 unAppID, string cszBetaKey, string cszBetaPassword);
-		[VTableSlot(26)]
+		[VTableSlot(25)]
 		bool BRequestBetaPasswords(UInt32 unAppID);
-		[VTableSlot(27)]
+		[VTableSlot(26)]
 		bool BIsCachedBetaPasswordValid(UInt32 unAppID, string cszBetaKey);
-		[VTableSlot(28)]
+		[VTableSlot(27)]
 		bool SetDownloadingEnabled(bool bState);
-		[VTableSlot(29)]
+		[VTableSlot(28)]
 		bool BIsDownloadingEnabled();
-		[VTableSlot(30)]
+		[VTableSlot(29)]
 		bool GetDownloadStats(ref DownloadStats_s pDownloadStats);
-		[VTableSlot(31)]
+		[VTableSlot(30)]
 		UInt32 GetDownloadingAppID();
+		[VTableSlot(31)]
+		bool SetAutoUpdateTimeRestriction(bool bUnk, Int32 iUnk1, Int32 iUnk2);
 		[VTableSlot(32)]
-		bool ChangeAppPriority(UInt32 unAppID, EAppDownloadPriority ePriority);
+		bool GetAutoUpdateTimeRestriction(ref Int32 piUnk1, ref Int32 piUnk2);
 		[VTableSlot(33)]
-		bool BHasLocalContentServer();
+		EAppAutoUpdateBehavior GetAppAutoUpdateBehavior(UInt32 unAppID);
 		[VTableSlot(34)]
-		bool BuildBackup(UInt32 unAppID, UInt64 ullMaxFileSize, string cszBackupPath);
+		bool SetAppAutoUpdateBehavior(UInt32 unAppID, EAppAutoUpdateBehavior eAppAutoUpdateBehavior);
 		[VTableSlot(35)]
-		bool BuildInstaller(string cszProjectFile, string cszBackupPath, string arg2);
+		bool SetAppAllowDownloadsWhileRunningBehavior(UInt32 unAppID, EAppAllowDownloadsWhileRunningBehavior eAppAllowDownloadsWhileRunningBehavior);
 		[VTableSlot(36)]
-		bool CancelBackup();
+		EAppAllowDownloadsWhileRunningBehavior GetAppAllowDownloadsWhileRunningBehavior(UInt32 unAppID);
 		[VTableSlot(37)]
-		EAppUpdateError RestoreApp(UInt32 unAppID, Int32 iBaseFolder, string cszBackupPath);
+		void SetAllowDownloadsWhileAnyAppRunning(bool bAllowDownloadsWhileAnyAppRunning);
 		[VTableSlot(38)]
-		bool BNeedsFile(UInt32 unAppID, string cszFilePath, UInt64 ullFileSize, UInt32 uUnk);
+		bool BAllowDownloadsWhileAnyAppRunning();
 		[VTableSlot(39)]
-		bool BAddFileOnDisk(UInt32 unAppID, string cszFilePath, UInt64 ullFileSize, UInt32 uUnk, SHADigestWrapper_t ubSha1);
+		bool ChangeAppDownloadQueuePlacement(UInt32 unAppID, EAppDownloadQueuePlacement eAppDownloadQueuePlacement);
 		[VTableSlot(40)]
-		UInt32 FinishAddingFiles(UInt32 unAppID);
+		Int32 GetAppDownloadQueueIndex(UInt32 unAppID);
 		[VTableSlot(41)]
-		bool GetAppStateInfo(UInt32 unAppID, ref EAppReleaseState peReleaseState, ref EAppOwernshipFlags peOwernshipFlags, ref EAppState peAppState);
+		bool BHasLocalContentServer();
 		[VTableSlot(42)]
-		Int32 GetNumInstallBaseFolders();
+		bool BuildBackup(UInt32 unAppID, UInt64 ullMaxFileSize, string cszBackupPath);
 		[VTableSlot(43)]
-		Int32 GetInstallBaseFolder(Int32 iBaseFolder, StringBuilder pchPath, Int32 cbPath);
+		bool BuildInstaller(string cszProjectFile, string cszBackupPath, string arg2);
 		[VTableSlot(44)]
-		Int32 AddInstallBaseFolder(string szPath);
+		bool CancelBackup();
 		[VTableSlot(45)]
-		bool RemoveInstallBaseFolder(Int32 iBaseFolder);
+		EAppUpdateError RestoreApp(UInt32 unAppID, Int32 iBaseFolder, string cszBackupPath);
 		[VTableSlot(46)]
-		UInt64 GetFreeDiskSpace(Int32 iBaseFolder);
+		bool BNeedsFile(UInt32 unAppID, string cszFilePath, UInt64 ullFileSize, UInt32 uUnk);
 		[VTableSlot(47)]
-		Int32 GetAppInstallBaseFolder(Int32 iBaseFolder);
+		bool BAddFileOnDisk(UInt32 unAppID, string cszFilePath, UInt64 ullFileSize, UInt32 uUnk, SHADigestWrapper_t ubSha1);
 		[VTableSlot(48)]
-		void ForceInstallDirOverride(string cszPath);
+		UInt32 FinishAddingFiles(UInt32 unAppID);
 		[VTableSlot(49)]
-		bool SetDownloadThrottleRateKbps(Int32 iRate);
+		bool GetAppStateInfo(UInt32 unAppID, ref EAppReleaseState peReleaseState, ref EAppOwnershipFlags peOwnershipFlags, ref EAppState peAppState, ref CSteamID pSteamID);
 		[VTableSlot(50)]
-		Int32 GetDownloadThrottleRateKbps();
+		bool BIsAvailableOnPlatform(UInt32 uUnk, string pUnk);
 		[VTableSlot(51)]
-		void SuspendDownloadThrottling(bool bSuspend);
+		Int32 GetNumInstallBaseFolders();
 		[VTableSlot(52)]
-		bool GetAppOwner(UInt32 uUnk1, ref CSteamID pUnk, StringBuilder szUnk, UInt32 uUnk2);
+		Int32 GetInstallBaseFolder(Int32 iBaseFolder, StringBuilder pchPath, Int32 cbPath);
+		[VTableSlot(53)]
+		Int32 AddInstallBaseFolder(string szPath);
+		[VTableSlot(54)]
+		bool RemoveInstallBaseFolder(Int32 iBaseFolder);
+		[VTableSlot(55)]
+		UInt64 GetFreeDiskSpace(Int32 iBaseFolder);
+		[VTableSlot(56)]
+		Int32 GetAppInstallBaseFolder(Int32 iBaseFolder);
+		[VTableSlot(57)]
+		void ForceInstallDirOverride(string cszPath);
+		[VTableSlot(58)]
+		bool SetDownloadThrottleRateKbps(Int32 iRate);
+		[VTableSlot(59)]
+		Int32 GetDownloadThrottleRateKbps();
+		[VTableSlot(60)]
+		void SuspendDownloadThrottling(bool bSuspend);
+		[VTableSlot(61)]
+		string GetLaunchQueryParam(UInt32 unAppID, string pchKey);
+		[VTableSlot(62)]
+		void BeginLaunchQueryParams(UInt32 unAppId);
+		[VTableSlot(63)]
+		void SetLaunchQueryParam(UInt32 unAppId, string pchKey, string pchValue);
+		[VTableSlot(64)]
+		bool CommitLaunchQueryParams(UInt32 unAppId);
 	};
 }

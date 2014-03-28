@@ -13,22 +13,20 @@ namespace Steam4NET
 		[VTableSlot(0)]
 		Int32 GetAppData(UInt32 unAppID, string pchKey, StringBuilder pchValue, Int32 cchValueMax);
 		[VTableSlot(1)]
-		UInt32 GetInternalAppIDFromGameID(CGameID nGameID);
+		bool SetLocalAppConfig(UInt32 unAppID, Byte[] pchBuffer, Int32 cbBuffer);
 		[VTableSlot(2)]
-		Int32 GetAllOwnedMultiplayerApps(ref UInt32 punAppIDs, Int32 cAppIDsMax);
+		UInt32 GetInternalAppIDFromGameID(CGameID nGameID);
 		[VTableSlot(3)]
-		Int32 GetAppDataSection(UInt32 unAppID, EAppInfoSection eSection, Byte[] pchBuffer, Int32 cbBufferMax, bool bSharedKVSymbols);
+		Int32 GetAllOwnedMultiplayerApps(ref UInt32 punAppIDs, Int32 cAppIDsMax);
 		[VTableSlot(4)]
-		bool RequestAppInfoUpdate(ref UInt32 pAppIDs, Int32 nNumAppIDs);
+		Int32 GetAppDataSection(UInt32 unAppID, EAppInfoSection eSection, Byte[] pchBuffer, Int32 cbBufferMax, bool bSharedKVSymbols);
 		[VTableSlot(5)]
-		void NotifyAppEventTriggered(UInt32 unAppID, EAppEvent eAppEvent);
+		bool RequestAppInfoUpdate(ref UInt32 pAppIDs, Int32 nNumAppIDs);
 		[VTableSlot(6)]
-		void NotifyDlcInstalled(UInt32 unAppID);
+		void NotifyAppEventTriggered(UInt32 unAppID, EAppEvent eAppEvent);
 		[VTableSlot(7)]
 		Int32 GetDLCCount(UInt32 unAppID);
 		[VTableSlot(8)]
 		bool BGetDLCDataByIndex(UInt32 unAppID, Int32 iDLC, ref UInt32 pDlcAppID, ref bool pbAvailable, StringBuilder pchName, Int32 cchNameBufferSize);
-		[VTableSlot(9)]
-		bool BIsDlcInstalled(UInt32 unDlcAppID, UInt32 unGameAppID);
 	};
 }

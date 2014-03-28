@@ -34,24 +34,24 @@ namespace Steam4NET
 		[VTableSlot(1)]
 		UInt32 GetRegisteredBuildID(UInt32 arg0);
 		[VTableSlot(2)]
-		UInt32 InitializeDepotBuildForConfigFile(string pchConfigFile, string arg1, string arg2);
+		UInt32 StartDepotBuildFromConfigFile(string pchConfigFile, string arg1, string arg2, UInt32 arg3, UInt32 arg4, string arg5);
 		[VTableSlot(3)]
-		bool StartBuild(UInt32 hDepotBuild, UInt32 uFlags, string cszChunksPath, string arg3, UInt32 arg4);
-		[VTableSlot(4)]
 		bool BGetDepotBuildStatus(UInt32 hDepotBuild, ref EDepotBuildStatus pStatusOut, ref UInt32 pPercentDone);
-		[VTableSlot(5)]
+		[VTableSlot(4)]
 		bool CloseDepotBuildHandle(UInt32 hDepotBuild);
-		[VTableSlot(6)]
+		[VTableSlot(5)]
 		UInt32 ReconstructDepotFromManifestAndChunks(string pchLocalManifestPath, string pchLocalChunkPath, string pchRestorePath, UInt32 arg3);
-		[VTableSlot(7)]
+		[VTableSlot(6)]
 		bool BGetChunkCounts(UInt32 hDepotBuild, ref UInt32 unTotalChunksInNewBuild, ref UInt32 unChunksAlsoInOldBuild);
-		[VTableSlot(8)]
+		[VTableSlot(7)]
 		bool GetManifestGIDs(UInt32 hDepotBuild, ref UInt64 pBaselineGID, ref UInt64 pNewGID, ref bool arg3);
-		[VTableSlot(9)]
+		[VTableSlot(8)]
 		UInt32 FinishAppBuild(UInt32 uBuildID, UInt32 nAppID, string cszBetaKey, bool bOnlyFinish, UInt32 cNumSkipDepots);
-		[VTableSlot(10)]
+		[VTableSlot(9)]
 		UInt32 VerifyChunkStore(UInt32 arg0, UInt32 arg1, string arg2);
-		[VTableSlot(11)]
+		[VTableSlot(10)]
 		UInt32 StartUploadTest(UInt32 arg0, UInt32 arg1);
+		[VTableSlot(11)]
+		UInt32 DownloadDepot(UInt32 arg0, UInt32 arg1);
 	};
 }

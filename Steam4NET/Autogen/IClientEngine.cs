@@ -7,7 +7,7 @@ using Steam4NET.Attributes;
 namespace Steam4NET
 {
 
-	[InterfaceVersion("CLIENTENGINE_INTERFACE_VERSION002")]
+	[InterfaceVersion("CLIENTENGINE_INTERFACE_VERSION003")]
 	public interface IClientEngine
 	{
 		[VTableSlot(0)]
@@ -45,39 +45,39 @@ namespace Steam4NET
 		[VTableSlot(16)]
 		TClass GetIClientApps<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(17)]
-		TClass GetIClientContentServer<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
-		[VTableSlot(18)]
 		TClass GetIClientMatchmakingServers<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
-		[VTableSlot(19)]
+		[VTableSlot(18)]
 		void RunFrame();
-		[VTableSlot(20)]
+		[VTableSlot(19)]
 		UInt32 GetIPCCallCount();
-		[VTableSlot(21)]
+		[VTableSlot(20)]
 		TClass GetIClientUserStats<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
-		[VTableSlot(22)]
+		[VTableSlot(21)]
 		TClass GetIClientGameServerStats<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
-		[VTableSlot(23)]
+		[VTableSlot(22)]
 		TClass GetIClientNetworking<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
-		[VTableSlot(24)]
+		[VTableSlot(23)]
 		TClass GetIClientRemoteStorage<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
-		[VTableSlot(25)]
+		[VTableSlot(24)]
 		TClass GetIClientScreenshots<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
-		[VTableSlot(26)]
+		[VTableSlot(25)]
 		void SetWarningMessageHook(ref IntPtr pFunction);
-		[VTableSlot(27)]
+		[VTableSlot(26)]
 		TClass GetIClientGameCoordinator<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
-		[VTableSlot(28)]
+		[VTableSlot(27)]
 		void SetOverlayNotificationPosition(ENotificationPosition eNotificationPosition);
-		[VTableSlot(29)]
+		[VTableSlot(28)]
 		bool HookScreenshots(bool bHook);
-		[VTableSlot(30)]
+		[VTableSlot(29)]
 		bool IsOverlayEnabled();
-		[VTableSlot(31)]
+		[VTableSlot(30)]
 		bool GetAPICallResult(Int32 hSteamPipe, UInt64 hSteamAPICall, Byte[] pCallback, Int32 cubCallback, Int32 iCallbackExpected, ref bool pbFailed);
+		[VTableSlot(31)]
+		TClass GetIClientProductBuilder<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(32)]
 		TClass GetIClientDepotBuilder<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(33)]
-		TClass GetIClientNetworkDeviceManager<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientNetworkDeviceManager<TClass>(Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(34)]
 		void ConCommandInit(ref IntPtr pAccessor);
 		[VTableSlot(35)]
@@ -106,5 +106,21 @@ namespace Steam4NET
 		TClass GetIClientStreamLauncher<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(47)]
 		TClass GetIClientDeviceAuth<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(48)]
+		TClass GetIClientRemoteClientManager<TClass>(Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(49)]
+		TClass GetIClientStreamClient<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(50)]
+		TClass GetIClientShortcuts<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(51)]
+		TClass GetIClientRemoteControlManager<TClass>(Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(52)]
+		Int32 Set_ClientAPI_CPostAPIResultInProcess(ref IntPtr arg0);
+		[VTableSlot(53)]
+		Int32 Remove_ClientAPI_CPostAPIResultInProcess(ref IntPtr arg0);
+		[VTableSlot(54)]
+		TClass GetIClientUGC<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(55)]
+		TClass GetIClientVR<TClass>() where TClass : class;
 	};
 }

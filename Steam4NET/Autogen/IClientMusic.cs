@@ -7,7 +7,7 @@ using Steam4NET.Attributes;
 namespace Steam4NET
 {
 
-	public enum MusicPlayback_Status : int
+	public enum AudioPlayback_Status : int
 	{
 	};
 	
@@ -19,74 +19,118 @@ namespace Steam4NET
 	public interface IClientMusic
 	{
 		[VTableSlot(0)]
-		Int32 GetQueueCount();
+		bool BIsEnabled();
 		[VTableSlot(1)]
-		CMusicQueueEntry GetQueueEntry(Int32 arg0);
+		void Enable(bool bUnk);
 		[VTableSlot(2)]
-		void LoadQueueEntry(Int32 arg0);
+		void EnableCrawlLogging(bool bUnk);
 		[VTableSlot(3)]
-		void AddQueueEntry(ref CMusicQueueEntry arg0);
+		bool BIsPlaying();
 		[VTableSlot(4)]
-		void RemoveQueueEntry(ref CMusicQueueEntry arg0);
+		Int32 GetQueueCount();
 		[VTableSlot(5)]
-		MusicPlayback_Status GetPlaybackStatus();
+		Int32 GetCurrentQueueEntry();
 		[VTableSlot(6)]
-		void Play();
+		bool GetQueueEntryURI(Int32 iIndex, StringBuilder arg1, Int32 arg2);
 		[VTableSlot(7)]
-		void Pause();
+		bool GetQueueEntryData(Int32 iIndex, StringBuilder arg1, Int32 arg2, StringBuilder arg3, Int32 arg4, StringBuilder arg5, Int32 arg6);
 		[VTableSlot(8)]
-		void Stop();
+		void EmptyQueue();
 		[VTableSlot(9)]
-		void PlayFirst();
+		void RemoveQueueEntry(Int32 iIndex, bool bUnk);
 		[VTableSlot(10)]
-		void PlayPrevious();
+		void AddAlbumToQueue(string arg0, bool arg1, bool arg2);
 		[VTableSlot(11)]
-		void PlayNext();
+		void AddTrackToQueue(string arg0, bool arg1, bool arg2, bool arg3);
 		[VTableSlot(12)]
-		void PlayLast();
+		AudioPlayback_Status GetPlaybackStatus();
 		[VTableSlot(13)]
-		MediaController_Status GetStatusLocalLibrary();
+		void SetPlayingLooped(bool bPlayingLooped);
 		[VTableSlot(14)]
-		Int32 GetLocalLibraryDirectoryEntryCount();
+		bool IsPlayingLooped();
 		[VTableSlot(15)]
-		bool GetLocalLibraryDirectoryEntry(Int32 arg0, ref Int32 arg1, StringBuilder arg2, Int32 arg3, StringBuilder arg4, Int32 arg5, ref bool arg6);
+		void SetPlayingShuffled(bool bPlayingShuffled);
 		[VTableSlot(16)]
-		void SetLocalLibraryDirectoryEntryEnabled(Int32 arg0, bool arg1);
+		bool IsPlayingShuffled();
 		[VTableSlot(17)]
-		void ResetLocalLibraryDirectoriesToDefault();
+		void Play();
 		[VTableSlot(18)]
-		void UpdateLocalLibraryDirectoriesToCrawl();
+		void Pause();
 		[VTableSlot(19)]
-		bool BLocalLibraryIsCrawling();
+		void Stop();
 		[VTableSlot(20)]
-		Int32 GetLocalLibraryAlbumCount();
+		void PlayPrevious();
 		[VTableSlot(21)]
-		bool GetLocalLibraryAlbumKey(Int32 arg0, StringBuilder arg1, Int32 arg2);
+		void PlayEntry(Int32 arg0);
 		[VTableSlot(22)]
-		bool GetLocalLibraryAlbumNextKey(string arg0, bool arg1, StringBuilder arg2, Int32 arg3);
+		void SetVolume(float flVolume);
 		[VTableSlot(23)]
-		bool GetLocalLibraryAlbumEntry(string arg0, StringBuilder arg1, Int32 arg2, StringBuilder arg3, Int32 arg4, ref Int32 arg5);
+		float GetVolume();
 		[VTableSlot(24)]
-		bool GetLocalLibraryAlbumTrackEntry(string arg0, Int32 arg1, StringBuilder arg2, Int32 arg3, ref Int32 arg4);
+		void ResetLocalLibrary();
 		[VTableSlot(25)]
-		bool GetLocalLibraryAlbumTrackKey(string arg0, Int32 arg1, StringBuilder arg2, Int32 arg3);
+		MediaController_Status GetStatusLocalLibrary();
 		[VTableSlot(26)]
-		void StartUsingSpotify();
+		void SaveLocalLibraryDirectorySettings();
 		[VTableSlot(27)]
-		void StopUsingSpotify();
+		Int32 GetLocalLibraryDirectoryEntryCount();
 		[VTableSlot(28)]
-		MediaController_Status GetStatusSpotify();
+		bool GetLocalLibraryDirectoryEntry(Int32 arg0, StringBuilder arg1, Int32 arg2);
 		[VTableSlot(29)]
-		void LoginSpotify(string arg0, string arg1);
+		void AddLocalLibraryDirectoryEntry(string arg0);
 		[VTableSlot(30)]
-		void ReloginSpotify();
+		void ResetLocalLibraryDirectories(bool arg0);
 		[VTableSlot(31)]
-		string GetCurrentUserSpotify();
+		bool GetDefaultLocalLibraryDirectory(StringBuilder arg0, Int32 arg1);
 		[VTableSlot(32)]
-		void ForgetCurrentUserSpotify();
+		void LocalLibraryStopCrawling();
 		[VTableSlot(33)]
-		void LogoutSpotify();
+		void UpdateLocalLibraryDirectoriesToCrawl();
 		[VTableSlot(34)]
+		bool BLocalLibraryIsCrawling();
+		[VTableSlot(35)]
+		void CrawlAlbum(string arg0);
+		[VTableSlot(36)]
+		void CrawlTrack(string arg0);
+		[VTableSlot(37)]
+		Int32 GetLocalLibraryAlbumCount();
+		[VTableSlot(38)]
+		bool GetLocalLibraryAlbumKey(Int32 arg0, StringBuilder arg1, Int32 arg2);
+		[VTableSlot(39)]
+		bool GetLocalLibraryAlbumEntry(string arg0, StringBuilder arg1, Int32 arg2, StringBuilder arg3, Int32 arg4, ref Int32 arg5, ref bool arg6);
+		[VTableSlot(40)]
+		bool GetLocalLibraryAlbumTrackEntry(string arg0, Int32 arg1, StringBuilder arg2, Int32 arg3, ref Int32 arg4, StringBuilder arg5, Int32 arg6);
+		[VTableSlot(41)]
+		Int32 GetLocalLibraryTrackCount();
+		[VTableSlot(42)]
+		bool GetLocalLibraryAlbumTrackKey(string arg0, Int32 arg1, StringBuilder arg2, Int32 arg3);
+		[VTableSlot(43)]
+		Int32 GetLocalLibraryTrackCountForAlbum(string arg0);
+		[VTableSlot(44)]
+		Int32 GetLocalLibraryArtistCount();
+		[VTableSlot(45)]
+		bool GetLocalLibraryArtistName(Int32 arg0, StringBuilder arg1, Int32 arg2);
+		[VTableSlot(46)]
+		Int32 GetLocalLibraryAlbumCountForArtistName(string arg0);
+		[VTableSlot(47)]
+		bool GetLocalLibraryArtistAlbumKey(string arg0, Int32 arg1, StringBuilder arg2, Int32 arg3);
+		[VTableSlot(48)]
+		void StartUsingSpotify();
+		[VTableSlot(49)]
+		void StopUsingSpotify();
+		[VTableSlot(50)]
+		MediaController_Status GetStatusSpotify();
+		[VTableSlot(51)]
+		void LoginSpotify(string arg0, string arg1);
+		[VTableSlot(52)]
+		void ReloginSpotify();
+		[VTableSlot(53)]
+		string GetCurrentUserSpotify();
+		[VTableSlot(54)]
+		void ForgetCurrentUserSpotify();
+		[VTableSlot(55)]
+		void LogoutSpotify();
+		[VTableSlot(56)]
 		void DumpStatusToConsole();
 	};
 }

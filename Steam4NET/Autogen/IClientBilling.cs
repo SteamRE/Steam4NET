@@ -17,90 +17,88 @@ namespace Steam4NET
 		[VTableSlot(0)]
 		bool PurchaseWithActivationCode(string pchActivationCode);
 		[VTableSlot(1)]
-		bool CancelLicense(UInt32 packageID, Int32 nCancelReason);
-		[VTableSlot(2)]
 		UInt32 GetLicensePackageID(UInt32 nLicenseIndex);
-		[VTableSlot(3)]
+		[VTableSlot(2)]
 		UInt32 GetLicenseTimeCreated(UInt32 nLicenseIndex);
-		[VTableSlot(4)]
+		[VTableSlot(3)]
 		UInt32 GetLicenseTimeNextProcess(UInt32 nLicenseIndex);
-		[VTableSlot(5)]
+		[VTableSlot(4)]
 		Int32 GetLicenseMinuteLimit(UInt32 nLicenseIndex);
-		[VTableSlot(6)]
+		[VTableSlot(5)]
 		Int32 GetLicenseMinutesUsed(UInt32 nLicenseIndex);
-		[VTableSlot(7)]
+		[VTableSlot(6)]
 		EPaymentMethod GetLicensePaymentMethod(UInt32 nLicenseIndex);
-		[VTableSlot(8)]
+		[VTableSlot(7)]
 		ELicenseFlags GetLicenseFlags(UInt32 nLicenseIndex);
-		[VTableSlot(9)]
+		[VTableSlot(8)]
 		string GetLicensePurchaseCountryCode(UInt32 nLicenseIndex);
-		[VTableSlot(10)]
+		[VTableSlot(9)]
 		Int32 GetLicenseTerritoryCode(UInt32 nLicenseIndex);
-		[VTableSlot(11)]
+		[VTableSlot(10)]
 		bool GetLicenseInfo(UInt32 nLicenseIndex, ref UInt32 pRTime32Created, ref UInt32 pRTime32NextProcess, ref Int32 pnMinuteLimit, ref Int32 pnMinutesUsed, ref EPaymentMethod pePaymentMethod, ref UInt32 punFlags, ref Int32 pnTerritoryCode, StringBuilder prgchPurchaseCountryCode);
-		[VTableSlot(12)]
+		[VTableSlot(11)]
 		UInt32 GetReceiptPackageID(UInt32 nReceiptIndex);
-		[VTableSlot(13)]
+		[VTableSlot(12)]
 		EPurchaseStatus GetReceiptStatus(UInt32 nReceiptIndex);
-		[VTableSlot(14)]
+		[VTableSlot(13)]
 		EPurchaseResultDetail GetReceiptResultDetail(UInt32 nReceiptIndex);
-		[VTableSlot(15)]
+		[VTableSlot(14)]
 		UInt32 GetReceiptTransTime(UInt32 nReceiptIndex);
-		[VTableSlot(16)]
+		[VTableSlot(15)]
 		UInt64 GetReceiptTransID(UInt32 nReceiptIndex);
-		[VTableSlot(17)]
+		[VTableSlot(16)]
 		EPaymentMethod GetReceiptPaymentMethod(UInt32 nReceiptIndex);
-		[VTableSlot(18)]
+		[VTableSlot(17)]
 		UInt32 GetReceiptBaseCost(UInt32 nReceiptIndex);
-		[VTableSlot(19)]
+		[VTableSlot(18)]
 		UInt32 GetReceiptTotalDiscount(UInt32 nReceiptIndex);
-		[VTableSlot(20)]
+		[VTableSlot(19)]
 		UInt32 GetReceiptTax(UInt32 nReceiptIndex);
-		[VTableSlot(21)]
+		[VTableSlot(20)]
 		UInt32 GetReceiptShipping(UInt32 nReceiptIndex);
-		[VTableSlot(22)]
+		[VTableSlot(21)]
 		ECurrencyCode GetReceiptCurrencyCode(UInt32 nReceiptIndex);
-		[VTableSlot(23)]
+		[VTableSlot(22)]
 		string GetReceiptCountryCode(UInt32 nReceiptIndex);
-		[VTableSlot(24)]
+		[VTableSlot(23)]
 		string GetReceiptErrorHeadline(UInt32 nReceiptIndex);
-		[VTableSlot(25)]
+		[VTableSlot(24)]
 		string GetReceiptErrorString(UInt32 nReceiptIndex);
-		[VTableSlot(26)]
+		[VTableSlot(25)]
 		string GetReceiptErrorLinkText(UInt32 nReceiptIndex);
-		[VTableSlot(27)]
+		[VTableSlot(26)]
 		string GetReceiptErrorLinkURL(UInt32 nReceiptIndex);
-		[VTableSlot(28)]
+		[VTableSlot(27)]
 		UInt32 GetReceiptErrorAppID(UInt32 nReceiptIndex);
-		[VTableSlot(29)]
+		[VTableSlot(28)]
 		UInt32 GetNumLicenses();
-		[VTableSlot(30)]
+		[VTableSlot(29)]
 		UInt32 GetNumReceipts();
-		[VTableSlot(31)]
+		[VTableSlot(30)]
 		bool PurchaseWithMachineID(UInt32 nPackageID, string pchCustomData);
-		[VTableSlot(32)]
+		[VTableSlot(31)]
 		bool GetReceiptCardInfo(UInt32 nReceiptIndex, ref ECreditCardType eCreditCardType, StringBuilder pchCardLast4Digits, StringBuilder pchCardHolderFirstName, StringBuilder pchCardHolderLastName, StringBuilder pchCardExpYear, StringBuilder pchCardExpMonth);
-		[VTableSlot(33)]
+		[VTableSlot(32)]
 		bool GetReceiptBillingAddress(UInt32 nReceiptIndex, StringBuilder pchFirstName, StringBuilder pchLastName, StringBuilder pchAddress1, StringBuilder pchAddress2, StringBuilder pchCity, StringBuilder pchPostcode, StringBuilder pchState, StringBuilder pchCountry, StringBuilder pchPhone);
-		[VTableSlot(34)]
+		[VTableSlot(33)]
 		UInt32 GetReceiptLineItemCount(UInt32 nReceiptIndex);
-		[VTableSlot(35)]
+		[VTableSlot(34)]
 		bool GetReceiptLineItemInfo(UInt32 nReceiptIndex, UInt32 nLineItemIndex, ref UInt32 nPackageID, ref UInt32 nBaseCost, ref UInt32 nDiscount, ref UInt32 nTax, ref UInt32 nShipping, ref ECurrencyCode eCurrencyCode, ref UInt32 punAppId, StringBuilder pchDescription, StringBuilder pchCouponInfoURL);
-		[VTableSlot(36)]
+		[VTableSlot(35)]
 		void EnableTestLicense(UInt32 unPackageID);
-		[VTableSlot(37)]
+		[VTableSlot(36)]
 		void DisableTestLicense(UInt32 unPackageID);
-		[VTableSlot(38)]
+		[VTableSlot(37)]
 		bool ActivateOEMTicket(string pchOEMLicenseFile);
-		[VTableSlot(39)]
+		[VTableSlot(38)]
 		UInt32 GetPackageName(UInt32 unPackageID, StringBuilder pchName, Int32 cubName);
-		[VTableSlot(40)]
+		[VTableSlot(39)]
 		bool GetPackageInfo(UInt32 unPackageID, ref UInt32 puNumAppIds, ref UInt32 puNumDepotIDs, ref EBillingType peBillingType, ref ELicenseType peLicenseType, ref EPackageStatus pePackageStatus, ref Int32 piCodeClass, ref Int32 piGameCode, ref Int32 piTerritoryCode, ref bool pbRequiresShipping, ref bool pbIsPreorder);
-		[VTableSlot(41)]
+		[VTableSlot(40)]
 		UInt32 GetAppsInPackage(UInt32 unPackageID, ref UInt32 puIds, UInt32 uMaxIds, bool bExcludeDepots, bool bExcludeApps);
-		[VTableSlot(42)]
+		[VTableSlot(41)]
 		UInt32 GetPackageExtendedInfo(UInt32 unPackageID, Byte[] pubData, Int32 cubData, bool bSharedKVSymbols);
-		[VTableSlot(43)]
+		[VTableSlot(42)]
 		UInt64 RequestFreeLicenseForApp(UInt32 unAppId);
 	};
 }

@@ -100,5 +100,7 @@ namespace Steam4NET
 		void ReleaseGMSQuery(UInt64 ullGMSQuery);
 		[VTableSlot(44)]
 		void SendGameServerPingSample(UInt32 unAppID, Int32 nSamples, ref PingSample_t pSamples);
+		[VTableSlot(45)]
+		UInt64 EnsureFavoriteGameAccountsUpdated(bool bUnk);
 	};
 }

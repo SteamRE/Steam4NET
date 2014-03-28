@@ -137,7 +137,7 @@ namespace Steam4NET
 		[VTableSlot(62)]
 		void LoadLocalFileInfoCache(UInt32 nAppId);
 		[VTableSlot(63)]
-		void EvaluateRemoteStorageSyncState(UInt32 nAppId);
+		void EvaluateRemoteStorageSyncState(UInt32 nAppId, bool bUnk);
 		[VTableSlot(64)]
 		ERemoteStorageSyncState GetRemoteStorageSyncState(UInt32 nAppId);
 		[VTableSlot(65)]

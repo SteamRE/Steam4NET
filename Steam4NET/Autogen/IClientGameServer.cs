@@ -44,7 +44,7 @@ namespace Steam4NET
 		[VTableSlot(5)]
 		void SetDedicatedServer(bool bDedicatedServer);
 		[VTableSlot(6)]
-		void LogOn(string pchLogin, string pchPassword);
+		void LogOn(string pchToken);
 		[VTableSlot(7)]
 		void LogOnAnonymous();
 		[VTableSlot(8)]

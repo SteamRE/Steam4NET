@@ -7,15 +7,20 @@ using Steam4NET.Attributes;
 namespace Steam4NET
 {
 
-	public interface CAdapterSteamController001
+	[InterfaceVersion("STEAMCONTROLLER_INTERFACE_VERSION")]
+	public interface ISteamController001
 	{
 		[VTableSlot(0)]
-		Int32 Init();
+		Int32 Init(string pchAbsolutePathToControllerConfigVDF);
 		[VTableSlot(1)]
 		Int32 Shutdown();
 		[VTableSlot(2)]
 		Int32 RunFrame();
 		[VTableSlot(3)]
-		Int32 GetControllerState(UInt32 uUnk, ref SteamControllerState_t pState);
+		Int32 GetControllerState(UInt32 unControllerIndex, ref SteamControllerState_t pState);
+		[VTableSlot(4)]
+		void TriggerHapticPulse(UInt32 unControllerIndex, ESteamControllerPad eTargetPad, UInt16 usDurationMicroSec);
+		[VTableSlot(5)]
+		void SetOverrideMode(string pchMode);
 	};
 }

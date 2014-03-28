@@ -66,5 +66,7 @@ namespace Steam4NET
 		void SetWinningPingTimeForCellID(UInt32 uPing);
 		[VTableSlot(27)]
 		void GetSteam2ID(ref TSteamGlobalUserID pUserID);
+		[VTableSlot(28)]
+		UInt32 GetCellID();
 	};
 }
