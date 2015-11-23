@@ -70,400 +70,398 @@ namespace Steam4NET
 		[VTableSlot(14)]
 		void AcknowledgeVACBanning(UInt32 nAppID);
 		[VTableSlot(15)]
-		void SetSteam2Ticket(Byte[] pubTicket, Int32 cubTicket);
-		[VTableSlot(16)]
-		bool BExistsSteam2Ticket();
-		[VTableSlot(17)]
 		bool SetEmail(string pchEmail);
-		[VTableSlot(18)]
+		[VTableSlot(16)]
 		bool SetConfigString(ERegistrySubTree eRegistrySubTree, string pchKey, string pchValue);
-		[VTableSlot(19)]
+		[VTableSlot(17)]
 		bool GetConfigString(ERegistrySubTree eRegistrySubTree, string pchKey, StringBuilder pchValue, Int32 cbValue);
-		[VTableSlot(20)]
+		[VTableSlot(18)]
 		bool SetConfigInt(ERegistrySubTree eRegistrySubTree, string pchKey, Int32 iValue);
-		[VTableSlot(21)]
+		[VTableSlot(19)]
 		bool GetConfigInt(ERegistrySubTree eRegistrySubTree, string pchKey, ref Int32 pValue);
-		[VTableSlot(22)]
+		[VTableSlot(20)]
 		bool GetConfigStoreKeyName(ERegistrySubTree eRegistrySubTree, string pchKey, StringBuilder pchStoreName, Int32 cbStoreName);
-		[VTableSlot(23)]
+		[VTableSlot(21)]
 		Int32 InitiateGameConnection(Byte[] pOutputBlob, Int32 cbBlobMax, CSteamID steamIDGS, CGameID gameID, UInt32 unIPServer, UInt16 usPortServer, bool bSecure);
-		[VTableSlot(24)]
+		[VTableSlot(22)]
 		Int32 InitiateGameConnectionOld(Byte[] pOutputBlob, Int32 cbBlobMax, CSteamID steamIDGS, CGameID gameID, UInt32 unIPServer, UInt16 usPortServer, bool bSecure, Byte[] pvSteam2GetEncryptionKey, Int32 cbSteam2GetEncryptionKey);
-		[VTableSlot(25)]
+		[VTableSlot(23)]
 		void TerminateGameConnection(UInt32 unIPServer, UInt16 usPortServer);
-		[VTableSlot(26)]
+		[VTableSlot(24)]
 		bool TerminateAppMultiStep(UInt32 arg0, UInt32 arg1);
-		[VTableSlot(27)]
+		[VTableSlot(25)]
 		void SetSelfAsPrimaryChatDestination();
-		[VTableSlot(28)]
+		[VTableSlot(26)]
 		bool IsPrimaryChatDestination();
-		[VTableSlot(29)]
+		[VTableSlot(27)]
 		void RequestLegacyCDKey(UInt32 iAppID);
-		[VTableSlot(30)]
+		[VTableSlot(28)]
 		bool AckGuestPass(string pchGuestPassCode);
-		[VTableSlot(31)]
+		[VTableSlot(29)]
 		bool RedeemGuestPass(string pchGuestPassCode);
-		[VTableSlot(32)]
+		[VTableSlot(30)]
 		UInt32 GetGuestPassToGiveCount();
-		[VTableSlot(33)]
+		[VTableSlot(31)]
 		UInt32 GetGuestPassToRedeemCount();
-		[VTableSlot(34)]
+		[VTableSlot(32)]
 		bool GetGuestPassToGiveInfo(UInt32 nPassIndex, ref UInt64 pgidGuestPassID, ref UInt32 pnPackageID, ref UInt32 pRTime32Created, ref UInt32 pRTime32Expiration, ref UInt32 pRTime32Sent, ref UInt32 pRTime32Redeemed, StringBuilder pchRecipientAddress, Int32 cRecipientAddressSize);
-		[VTableSlot(35)]
+		[VTableSlot(33)]
 		bool GetGuestPassToRedeemInfo(UInt32 nPassIndex, ref UInt64 pgidGuestPassID, ref UInt32 pnPackageID, ref UInt32 pRTime32Created, ref UInt32 pRTime32Expiration, ref UInt32 pRTime32Sent, ref UInt32 pRTime32Redeemed);
-		[VTableSlot(36)]
+		[VTableSlot(34)]
 		bool GetGuestPassToRedeemSenderName(UInt32 nPassIndex, StringBuilder pchSenderName, Int32 cSenderNameSize);
-		[VTableSlot(37)]
+		[VTableSlot(35)]
 		void AcknowledgeMessageByGID(string pchMessageGID);
-		[VTableSlot(38)]
+		[VTableSlot(36)]
 		bool SetLanguage(string pchLanguage);
-		[VTableSlot(39)]
+		[VTableSlot(37)]
 		void TrackAppUsageEvent(CGameID gameID, Int32 eAppUsageEvent, string pchExtraInfo);
-		[VTableSlot(40)]
+		[VTableSlot(38)]
 		Int32 RaiseConnectionPriority(EConnectionPriority eConnectionPriority);
-		[VTableSlot(41)]
+		[VTableSlot(39)]
 		void ResetConnectionPriority(Int32 hRaiseConnectionPriorityPrev);
-		[VTableSlot(42)]
+		[VTableSlot(40)]
 		void SetAccountNameFromSteam2(string pchAccountName);
-		[VTableSlot(43)]
+		[VTableSlot(41)]
 		bool SetPasswordFromSteam2(string pchPassword);
-		[VTableSlot(44)]
+		[VTableSlot(42)]
 		bool BHasCachedCredentials(string pchUnk);
-		[VTableSlot(45)]
+		[VTableSlot(43)]
 		bool SetAccountNameForCachedCredentialLogin(string pchAccountName, bool bUnk);
-		[VTableSlot(46)]
+		[VTableSlot(44)]
 		void SetLoginInformation(string pchAccountName, string pchPassword, bool bRememberPassword);
-		[VTableSlot(47)]
+		[VTableSlot(45)]
 		void ClearAllLoginInformation();
-		[VTableSlot(48)]
+		[VTableSlot(46)]
 		void SetAccountCreationTime(UInt32 rtime32Time);
-		[VTableSlot(49)]
+		[VTableSlot(47)]
 		UInt64 RequestWebAuthToken();
-		[VTableSlot(50)]
+		[VTableSlot(48)]
 		bool GetCurrentWebAuthToken(StringBuilder pchBuffer, Int32 cubBuffer);
-		[VTableSlot(51)]
+		[VTableSlot(49)]
 		bool GetLanguage(StringBuilder pchLanguage, Int32 cbLanguage);
-		[VTableSlot(52)]
+		[VTableSlot(50)]
 		bool BIsCyberCafe();
-		[VTableSlot(53)]
+		[VTableSlot(51)]
 		bool BIsAcademicAccount();
-		[VTableSlot(54)]
+		[VTableSlot(52)]
 		void CreateAccount(string pchAccountName, string pchNewPassword, string pchNewEmail, Int32 iQuestion, string pchNewQuestion, string pchNewAnswer);
-		[VTableSlot(55)]
+		[VTableSlot(53)]
 		UInt64 ResetPassword(string pchAccountName, string pchOldPassword, string pchNewPassword, string pchValidationCode, string pchAnswer);
-		[VTableSlot(56)]
+		[VTableSlot(54)]
 		void TrackNatTraversalStat(ref CNatTraversalStat pNatStat);
-		[VTableSlot(57)]
+		[VTableSlot(55)]
 		void TrackSteamUsageEvent(ESteamUsageEvent eSteamUsageEvent, Byte[] pubKV, UInt32 cubKV);
-		[VTableSlot(58)]
+		[VTableSlot(56)]
 		void TrackSteamGUIUsage(string arg0);
-		[VTableSlot(59)]
+		[VTableSlot(57)]
 		void SetComputerInUse();
-		[VTableSlot(60)]
+		[VTableSlot(58)]
 		bool BIsGameRunning(CGameID gameID);
-		[VTableSlot(61)]
+		[VTableSlot(59)]
 		UInt64 GetCurrentSessionToken();
-		[VTableSlot(62)]
+		[VTableSlot(60)]
 		bool BUpdateAppOwnershipTicket(UInt32 nAppID, bool bOnlyUpdateIfStale, bool bIsDepot);
-		[VTableSlot(63)]
+		[VTableSlot(61)]
 		bool RequestCustomBinary(string pszAbsolutePath, UInt32 nAppID, bool bForceUpdate, bool bAppLaunchRequest);
-		[VTableSlot(64)]
+		[VTableSlot(62)]
 		EResult GetCustomBinariesState(UInt32 unAppID, ref UInt32 punProgress);
-		[VTableSlot(65)]
+		[VTableSlot(63)]
 		EResult RequestCustomBinaries(UInt32 unAppID, bool arg1, bool arg2, ref UInt32 arg3);
-		[VTableSlot(66)]
+		[VTableSlot(64)]
 		void SetCellID(UInt32 cellID);
-		[VTableSlot(67)]
+		[VTableSlot(65)]
 		void SetWinningPingTimeForCellID(UInt32 uPing);
-		[VTableSlot(68)]
+		[VTableSlot(66)]
 		string GetUserBaseFolder();
-		[VTableSlot(69)]
+		[VTableSlot(67)]
 		bool GetUserDataFolder(CGameID gameID, StringBuilder pchBuffer, Int32 cubBuffer);
-		[VTableSlot(70)]
+		[VTableSlot(68)]
 		bool GetUserConfigFolder(StringBuilder pchBuffer, Int32 cubBuffer);
-		[VTableSlot(71)]
+		[VTableSlot(69)]
 		bool GetAccountName(StringBuilder pchAccountName, UInt32 cb);
-		[VTableSlot(72)]
+		[VTableSlot(70)]
 		bool GetAccountName(CSteamID userID, StringBuilder pchAccountName, UInt32 cb);
-		[VTableSlot(73)]
+		[VTableSlot(71)]
 		bool IsPasswordRemembered();
-		[VTableSlot(74)]
+		[VTableSlot(72)]
 		bool RequiresLegacyCDKey(UInt32 nAppID, ref bool pbUnk);
-		[VTableSlot(75)]
+		[VTableSlot(73)]
 		bool GetLegacyCDKey(UInt32 nAppID, StringBuilder pchKeyData, Int32 cbKeyData);
-		[VTableSlot(76)]
+		[VTableSlot(74)]
 		bool SetLegacyCDKey(UInt32 nAppID, string pchKeyData);
-		[VTableSlot(77)]
+		[VTableSlot(75)]
 		bool WriteLegacyCDKey(UInt32 nAppID);
-		[VTableSlot(78)]
+		[VTableSlot(76)]
 		void RemoveLegacyCDKey(UInt32 nAppID);
-		[VTableSlot(79)]
+		[VTableSlot(77)]
 		void RequestLegacyCDKeyFromApp(UInt32 nMainAppID, UInt32 nDLCAppID);
-		[VTableSlot(80)]
+		[VTableSlot(78)]
 		bool BIsAnyGameRunning();
-		[VTableSlot(81)]
+		[VTableSlot(79)]
 		void TestAvailablePassword(Byte[] pubDigestPassword, Int32 cubDigestPassword);
-		[VTableSlot(82)]
+		[VTableSlot(80)]
 		void GetSteamGuardDetails();
-		[VTableSlot(83)]
+		[VTableSlot(81)]
 		void ChangePassword(string pchOldPassword, string pchNewPassword);
-		[VTableSlot(84)]
+		[VTableSlot(82)]
 		void ChangeEmail(string arg0, string pchEmail);
-		[VTableSlot(85)]
+		[VTableSlot(83)]
 		void ChangeSecretQuestionAndAnswer(string arg0, Int32 iQuestion, string pchNewQuestion, string pchNewAnswer);
-		[VTableSlot(86)]
+		[VTableSlot(84)]
 		void SetSteam2FullASTicket(Byte[] pubTicket, Int32 cubTicket);
-		[VTableSlot(87)]
+		[VTableSlot(85)]
 		Int32 GetSteam2FullASTicket(Byte[] pubTicket, Int32 cubTicket);
-		[VTableSlot(88)]
+		[VTableSlot(86)]
 		bool GetEmail(StringBuilder pchEmail, Int32 cchEmail, ref bool pbValidated);
-		[VTableSlot(89)]
+		[VTableSlot(87)]
 		void RequestForgottenPasswordEmail(string pchAccountName, string pchTriedPassword);
-		[VTableSlot(90)]
+		[VTableSlot(88)]
 		void FindAccountsByEmailAddress(string pchEmailAddress);
-		[VTableSlot(91)]
+		[VTableSlot(89)]
 		void FindAccountsByCdKey(string pchCdKey);
-		[VTableSlot(92)]
+		[VTableSlot(90)]
 		void GetNumAccountsWithEmailAddress(string pchEmailAddress);
-		[VTableSlot(93)]
+		[VTableSlot(91)]
 		void IsAccountNameInUse(string pchAccountName);
-		[VTableSlot(94)]
+		[VTableSlot(92)]
 		void Test_FakeConnectionTimeout();
-		[VTableSlot(95)]
+		[VTableSlot(93)]
 		bool RunInstallScript(ref UInt32 pAppIDs, Int32 cAppIDs, string pchInstallPath, string pchLanguage, bool bUninstall);
-		[VTableSlot(96)]
+		[VTableSlot(94)]
 		UInt32 IsInstallScriptRunning();
-		[VTableSlot(97)]
+		[VTableSlot(95)]
 		bool GetInstallScriptState(StringBuilder pchDescription, UInt32 cchDescription, ref UInt32 punNumSteps, ref UInt32 punCurrStep);
-		[VTableSlot(98)]
+		[VTableSlot(96)]
 		bool SpawnProcess(Byte[] lpVACBlob, UInt32 cbBlobSize, string lpApplicationName, string lpCommandLine, UInt32 dwCreationFlags, string lpCurrentDirectory, CGameID gameID, UInt32 nAppID, string pchGameName, UInt32 uUnk);
-		[VTableSlot(99)]
+		[VTableSlot(97)]
 		UInt32 GetAppOwnershipTicketLength(UInt32 nAppID);
-		[VTableSlot(100)]
+		[VTableSlot(98)]
 		UInt32 GetAppOwnershipTicketData(UInt32 nAppID, Byte[] pvBuffer, UInt32 cbBufferLength);
-		[VTableSlot(101)]
+		[VTableSlot(99)]
 		UInt32 GetAppOwnershipTicketExtendedData(UInt32 nAppID, Byte[] pvBuffer, UInt32 cbBufferLength, ref UInt32 piAppId, ref UInt32 piSteamId, ref UInt32 piSignature, ref UInt32 pcbSignature);
-		[VTableSlot(102)]
+		[VTableSlot(100)]
 		Int32 GetMarketingMessageCount();
-		[VTableSlot(103)]
+		[VTableSlot(101)]
 		bool GetMarketingMessage(Int32 cMarketingMessage, ref UInt64 gidMarketingMessageID, StringBuilder pubMsgUrl, Int32 cubMessageUrl, ref EMarketingMessageFlags eMarketingMssageFlags);
-		[VTableSlot(104)]
+		[VTableSlot(102)]
 		UInt32 GetAuthSessionTicket(Byte[] pMyAuthTicket, Int32 cbMaxMyAuthTicket, ref UInt32 pcbAuthTicket);
-		[VTableSlot(105)]
+		[VTableSlot(103)]
 		EBeginAuthSessionResult BeginAuthSession(Byte[] pTheirAuthTicket, Int32 cbTicket, CSteamID steamID);
-		[VTableSlot(106)]
+		[VTableSlot(104)]
 		void EndAuthSession(CSteamID steamID);
-		[VTableSlot(107)]
+		[VTableSlot(105)]
 		void CancelAuthTicket(UInt32 hAuthTicket);
-		[VTableSlot(108)]
+		[VTableSlot(106)]
 		EUserHasLicenseForAppResult IsUserSubscribedAppInTicket(CSteamID steamID, UInt32 appID);
-		[VTableSlot(109)]
+		[VTableSlot(107)]
 		void AdvertiseGame(CGameID gameID, CSteamID steamIDGameServer, UInt32 unIPServer, UInt16 usPortServer);
-		[VTableSlot(110)]
+		[VTableSlot(108)]
 		UInt64 RequestEncryptedAppTicket(Byte[] pUserData, Int32 cbUserData);
-		[VTableSlot(111)]
+		[VTableSlot(109)]
 		bool GetEncryptedAppTicket(Byte[] pTicket, Int32 cbMaxTicket, ref UInt32 pcbTicket);
-		[VTableSlot(112)]
+		[VTableSlot(110)]
 		Int32 GetGameBadgeLevel(Int32 nSeries, bool bFoil);
-		[VTableSlot(113)]
+		[VTableSlot(111)]
 		Int32 GetPlayerSteamLevel();
-		[VTableSlot(114)]
+		[VTableSlot(112)]
 		void SetAccountLimited(bool bAccountLimited);
-		[VTableSlot(115)]
+		[VTableSlot(113)]
 		bool BIsAccountLimited();
-		[VTableSlot(116)]
+		[VTableSlot(114)]
 		void SetAccountCommunityBanned(bool bBanned);
-		[VTableSlot(117)]
+		[VTableSlot(115)]
 		bool BIsAccountCommunityBanned();
-		[VTableSlot(118)]
+		[VTableSlot(116)]
 		void SetLimitedAccountCanInviteFriends(bool bCanInviteFriends);
-		[VTableSlot(119)]
+		[VTableSlot(117)]
 		bool BLimitedAccountCanInviteFriends();
-		[VTableSlot(120)]
+		[VTableSlot(118)]
 		void SendValidationEmail();
-		[VTableSlot(121)]
+		[VTableSlot(119)]
 		bool BGameConnectTokensAvailable();
-		[VTableSlot(122)]
+		[VTableSlot(120)]
 		Int32 NumGamesRunning();
-		[VTableSlot(123)]
+		[VTableSlot(121)]
 		CGameID GetRunningGameID(Int32 iGame);
-		[VTableSlot(124)]
+		[VTableSlot(122)]
 		UInt32 GetAccountSecurityPolicyFlags();
-		[VTableSlot(125)]
+		[VTableSlot(123)]
 		void RequestChangeEmail(string pchPassword, Int32 eRequestType);
-		[VTableSlot(126)]
+		[VTableSlot(124)]
 		void ChangePasswordWithCode(string pchOldPassword, string pchCode, string pchNewPassword);
-		[VTableSlot(127)]
+		[VTableSlot(125)]
 		void ChangeEmailWithCode(string pchPassword, string pchCode, string pchEmail, bool bFinal);
-		[VTableSlot(128)]
+		[VTableSlot(126)]
 		void ChangeSecretQuestionAndAnswerWithCode(string pchPassword, string pchCode, string pchNewQuestion, string pchNewAnswer);
-		[VTableSlot(129)]
+		[VTableSlot(127)]
 		void SetClientStat(EClientStat eStat, Int64 llValue, UInt32 nAppID, UInt32 nDepotID, UInt32 nCellID);
-		[VTableSlot(130)]
+		[VTableSlot(128)]
 		void VerifyPassword(string pchPassword);
-		[VTableSlot(131)]
+		[VTableSlot(129)]
 		bool BSupportUser();
-		[VTableSlot(132)]
+		[VTableSlot(130)]
 		bool BNeedsSSANextSteamLogon();
-		[VTableSlot(133)]
+		[VTableSlot(131)]
 		void ClearNeedsSSANextSteamLogon();
-		[VTableSlot(134)]
+		[VTableSlot(132)]
 		bool BIsAppOverlayEnabled(CGameID gameID);
-		[VTableSlot(135)]
+		[VTableSlot(133)]
 		bool BIsBehindNAT();
-		[VTableSlot(136)]
+		[VTableSlot(134)]
 		UInt32 GetMicroTxnAppID(UInt64 gidTransID);
-		[VTableSlot(137)]
+		[VTableSlot(135)]
 		UInt64 GetMicroTxnOrderID(UInt64 gidTransID);
-		[VTableSlot(138)]
+		[VTableSlot(136)]
 		bool BGetMicroTxnPrice(UInt64 gidTransID, ref CAmount pamtTotal, ref CAmount pamtTax, ref bool pbVat, ref CAmount pUnk);
-		[VTableSlot(139)]
+		[VTableSlot(137)]
 		Int32 GetMicroTxnLineItemCount(UInt64 gidTransID);
-		[VTableSlot(140)]
+		[VTableSlot(138)]
 		bool BGetMicroTxnLineItem(UInt64 gidTransID, UInt32 unLineItem, ref CAmount pamt, ref UInt32 punQuantity, StringBuilder pchDescription, UInt32 cubDescriptionLength, ref Int32 pRecurringTimeUnit, Byte[] pRecurringFrequency, ref CAmount pRecurringAmount, ref bool pbUnk);
-		[VTableSlot(141)]
+		[VTableSlot(139)]
 		bool BIsSandboxMicroTxn(UInt64 gidTransID, ref bool pbSandbox);
-		[VTableSlot(142)]
+		[VTableSlot(140)]
 		bool BMicroTxnRequiresCachedPmtMethod(UInt64 gidTransID, ref bool pbRequired);
-		[VTableSlot(143)]
+		[VTableSlot(141)]
 		UInt64 AuthorizeMicroTxn(UInt64 gidTransID, EMicroTxnAuthResponse eMicroTxnAuthResponse);
-		[VTableSlot(144)]
+		[VTableSlot(142)]
 		bool BGetWalletBalance(ref bool pbHasWallet, ref CAmount pamtBalance);
-		[VTableSlot(145)]
+		[VTableSlot(143)]
 		UInt64 RequestMicroTxnInfo(UInt64 gidTransID);
-		[VTableSlot(146)]
+		[VTableSlot(144)]
+		bool BMicroTxnRefundable(UInt64 gidTransID);
+		[VTableSlot(145)]
 		bool BGetAppMinutesPlayed(UInt32 nAppId, ref Int32 pnForever, ref Int32 pnLastTwoWeeks);
-		[VTableSlot(147)]
+		[VTableSlot(146)]
 		UInt32 GetAppLastPlayedTime(UInt32 nAppId);
-		[VTableSlot(148)]
+		[VTableSlot(147)]
 		bool BGetGuideURL(UInt32 uAppID, StringBuilder pchURL, UInt32 cchURL);
-		[VTableSlot(149)]
+		[VTableSlot(148)]
 		void PostUIResultToClientJob(UInt64 ulJobID, EResult eResult);
-		[VTableSlot(150)]
+		[VTableSlot(149)]
 		bool BPromptToVerifyEmail();
-		[VTableSlot(151)]
+		[VTableSlot(150)]
 		bool BPromptToChangePassword();
-		[VTableSlot(152)]
+		[VTableSlot(151)]
 		bool BAccountLocked();
-		[VTableSlot(153)]
+		[VTableSlot(152)]
 		bool BAccountShouldShowLockUI();
-		[VTableSlot(154)]
+		[VTableSlot(153)]
 		bool BAccountLockedByIPT();
-		[VTableSlot(155)]
+		[VTableSlot(154)]
 		Int32 GetCountAuthedComputers();
-		[VTableSlot(156)]
+		[VTableSlot(155)]
 		ESteamGuardProvider GetSteamGuardProvider();
-		[VTableSlot(157)]
+		[VTableSlot(156)]
 		bool GetSteamGuardRequireCodeByDefault();
-		[VTableSlot(158)]
+		[VTableSlot(157)]
 		bool ShowSteamGuardProviderOptions();
-		[VTableSlot(159)]
+		[VTableSlot(158)]
 		bool SteamGuardProviderMobileIsOption();
-		[VTableSlot(160)]
+		[VTableSlot(159)]
 		bool BSteamGuardNewMachineNotification();
-		[VTableSlot(161)]
+		[VTableSlot(160)]
 		UInt32 GetSteamGuardEnabledTime();
-		[VTableSlot(162)]
+		[VTableSlot(161)]
 		bool GetSteamGuardHistoryEntry(Int32 iEntryIndex, ref UInt32 puTimestamp, ref UInt32 puIP, ref bool pbIsRemembered, StringBuilder pchGeolocInfo, Int32 cchGeolocInfo, StringBuilder pchUnk, Int32 cbUnk);
-		[VTableSlot(163)]
+		[VTableSlot(162)]
 		void SetSteamGuardNewMachineDialogResponse(bool bIsApproved, bool bIsWizardComplete);
-		[VTableSlot(164)]
+		[VTableSlot(163)]
 		void RequestSteamGuardCodeForOtherLogin();
-		[VTableSlot(165)]
+		[VTableSlot(164)]
 		bool BAccountCanUseIPT();
-		[VTableSlot(166)]
+		[VTableSlot(165)]
 		void ChangeTwoFactorAuthOptions(Int32 eOption);
-		[VTableSlot(167)]
+		[VTableSlot(166)]
 		void ChangeSteamGuardOptions(string pchUnk, ESteamGuardProvider eProvider, bool bRequireCode);
-		[VTableSlot(168)]
+		[VTableSlot(167)]
 		void Set2ndFactorAuthCode(string pchAuthCode, bool bDontRememberComputer);
-		[VTableSlot(169)]
+		[VTableSlot(168)]
 		void SetUserMachineName(string pchMachineName);
-		[VTableSlot(170)]
+		[VTableSlot(169)]
 		bool GetUserMachineName(StringBuilder pchMachineName, Int32 cbMachineName);
-		[VTableSlot(171)]
+		[VTableSlot(170)]
 		bool BAccountHasIPTConfig();
-		[VTableSlot(172)]
+		[VTableSlot(171)]
 		bool GetEmailDomainFromLogonFailure(StringBuilder pchEmailDomain, Int32 cbEmailDomain);
-		[VTableSlot(173)]
+		[VTableSlot(172)]
 		bool BIsSubscribedApp(UInt32 nAppId);
-		[VTableSlot(174)]
+		[VTableSlot(173)]
 		UInt64 RegisterActivationCode(string pchActivationCode);
-		[VTableSlot(175)]
+		[VTableSlot(174)]
 		void OptionalDLCInstallation(UInt32 nAppID, UInt32 uUnk, bool bInstall);
-		[VTableSlot(176)]
+		[VTableSlot(175)]
 		void AckSystemIM(UInt64 arg0);
-		[VTableSlot(177)]
+		[VTableSlot(176)]
 		UInt64 RequestSpecialSurvey(UInt32 uSurveyId);
-		[VTableSlot(178)]
+		[VTableSlot(177)]
 		UInt64 SendSpecialSurveyResponse(UInt32 uSurveyId, Byte[] pubData, UInt32 cubData);
-		[VTableSlot(179)]
+		[VTableSlot(178)]
 		void RequestNotifications();
-		[VTableSlot(180)]
+		[VTableSlot(179)]
 		bool GetAppOwnershipInfo(UInt32 unAppId, ref UInt32 pRTime32Created, StringBuilder pchCountry);
-		[VTableSlot(181)]
+		[VTableSlot(180)]
 		void SendGameWebCallback(UInt32 unAppId, string szData);
-		[VTableSlot(182)]
+		[VTableSlot(181)]
 		bool BIsCurrentlyStreaming();
-		[VTableSlot(183)]
+		[VTableSlot(182)]
 		void RequestStopStreaming();
-		[VTableSlot(184)]
+		[VTableSlot(183)]
 		void OnBigPictureStreamingResult(bool arg0, Byte[] arg1);
-		[VTableSlot(185)]
+		[VTableSlot(184)]
 		void OnBigPictureStreamingDone();
-		[VTableSlot(186)]
+		[VTableSlot(185)]
 		void OnBigPictureStreamRestarting();
-		[VTableSlot(187)]
+		[VTableSlot(186)]
 		void LockParentalLock();
-		[VTableSlot(188)]
+		[VTableSlot(187)]
 		bool UnlockParentalLock(string pchUnk);
-		[VTableSlot(189)]
+		[VTableSlot(188)]
 		bool BIsParentalLockEnabled();
-		[VTableSlot(190)]
+		[VTableSlot(189)]
 		bool BIsParentalLockLocked();
-		[VTableSlot(191)]
+		[VTableSlot(190)]
 		void BlockApp(UInt32 unAppID);
-		[VTableSlot(192)]
+		[VTableSlot(191)]
 		void UnblockApp(UInt32 unAppID);
-		[VTableSlot(193)]
+		[VTableSlot(192)]
 		bool BIsAppBlocked(UInt32 unAppID);
-		[VTableSlot(194)]
+		[VTableSlot(193)]
 		bool BIsAppInBlockList(UInt32 unAppID);
-		[VTableSlot(195)]
+		[VTableSlot(194)]
 		void BlockFeature(EParentalFeature eParentalFeature);
-		[VTableSlot(196)]
+		[VTableSlot(195)]
 		void UnblockFeature(EParentalFeature eParentalFeature);
-		[VTableSlot(197)]
+		[VTableSlot(196)]
 		bool BIsFeatureBlocked(EParentalFeature eParentalFeature);
-		[VTableSlot(198)]
+		[VTableSlot(197)]
 		bool BIsFeatureInBlockList(EParentalFeature eParentalFeature);
-		[VTableSlot(199)]
+		[VTableSlot(198)]
 		UInt32 GetParentalUnlockTime();
-		[VTableSlot(200)]
+		[VTableSlot(199)]
 		bool BGetSerializedParentalSettings(ref CUtlBuffer pBuffer);
-		[VTableSlot(201)]
+		[VTableSlot(200)]
 		bool BSetParentalSettings(ref CUtlBuffer pBuffer);
-		[VTableSlot(202)]
+		[VTableSlot(201)]
 		bool BDisableParentalSettings();
-		[VTableSlot(203)]
+		[VTableSlot(202)]
 		bool BGetParentalWebToken(ref CUtlBuffer arg0, ref CUtlBuffer arg1);
-		[VTableSlot(204)]
+		[VTableSlot(203)]
 		bool BCanLogonOfflineMode();
-		[VTableSlot(205)]
+		[VTableSlot(204)]
 		EResult LogOnOfflineMode();
-		[VTableSlot(206)]
+		[VTableSlot(205)]
 		EResult ValidateOfflineLogonTicket(string pchUnk);
-		[VTableSlot(207)]
+		[VTableSlot(206)]
 		bool BGetOfflineLogonTicket(string pchUnk, ref COffline_OfflineLogonTicket pTicket);
-		[VTableSlot(208)]
+		[VTableSlot(207)]
 		void UploadLocalClientLogs();
-		[VTableSlot(209)]
+		[VTableSlot(208)]
 		void SetAsyncNotificationEnabled(UInt32 arg0, bool arg1);
-		[VTableSlot(210)]
+		[VTableSlot(209)]
 		bool BIsOtherSessionPlaying(ref UInt32 arg0);
-		[VTableSlot(211)]
+		[VTableSlot(210)]
 		bool BKickOtherPlayingSession();
-		[VTableSlot(212)]
+		[VTableSlot(211)]
 		UInt32 GetStreamPortForGame(CGameID gameID);
 	};
 }

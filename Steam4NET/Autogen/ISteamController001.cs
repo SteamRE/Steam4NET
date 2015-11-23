@@ -11,13 +11,13 @@ namespace Steam4NET
 	public interface ISteamController001
 	{
 		[VTableSlot(0)]
-		Int32 Init(string pchAbsolutePathToControllerConfigVDF);
+		bool Init(string pchAbsolutePathToControllerConfigVDF);
 		[VTableSlot(1)]
-		Int32 Shutdown();
+		bool Shutdown();
 		[VTableSlot(2)]
-		Int32 RunFrame();
+		void RunFrame();
 		[VTableSlot(3)]
-		Int32 GetControllerState(UInt32 unControllerIndex, ref SteamControllerState_t pState);
+		bool GetControllerState(UInt32 unControllerIndex, ref SteamControllerState_t pState);
 		[VTableSlot(4)]
 		void TriggerHapticPulse(UInt32 unControllerIndex, ESteamControllerPad eTargetPad, UInt16 usDurationMicroSec);
 		[VTableSlot(5)]

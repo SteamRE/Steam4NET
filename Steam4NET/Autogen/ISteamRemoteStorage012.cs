@@ -113,6 +113,6 @@ namespace Steam4NET
 		[VTableSlot(50)]
 		UInt64 EnumeratePublishedWorkshopFiles(EWorkshopEnumerationType eType, UInt32 uStartIndex, UInt32 cDays, UInt32 cCount, ref SteamParamStringArray_t pTags, ref SteamParamStringArray_t pUserTags);
 		[VTableSlot(51)]
-		UInt64 UGCDownloadToLocation(UInt64 hContent, string cszLocation, UInt32 uUnk);
+		UInt64 UGCDownloadToLocation(UInt64 hContent, string cszLocation, UInt32 unPriority);
 	};
 }

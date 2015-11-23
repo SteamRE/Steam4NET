@@ -11,22 +11,22 @@ namespace Steam4NET
 	public interface ISteamMusic001
 	{
 		[VTableSlot(0)]
-		Int32 BIsEnabled();
+		bool BIsEnabled();
 		[VTableSlot(1)]
-		Int32 BIsPlaying();
+		bool BIsPlaying();
 		[VTableSlot(2)]
-		Int32 GetPlaybackStatus();
+		AudioPlayback_Status GetPlaybackStatus();
 		[VTableSlot(3)]
-		Int32 Play();
+		void Play();
 		[VTableSlot(4)]
-		Int32 Pause();
+		void Pause();
 		[VTableSlot(5)]
-		Int32 PlayPrevious();
+		void PlayPrevious();
 		[VTableSlot(6)]
-		Int32 PlayNext();
+		void PlayNext();
 		[VTableSlot(7)]
-		Int32 SerVolume(float fUnk);
+		void SetVolume(float flVolume);
 		[VTableSlot(8)]
-		Int32 GetVolume();
+		float GetVolume();
 	};
 }

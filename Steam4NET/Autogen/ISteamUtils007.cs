@@ -51,7 +51,7 @@ namespace Steam4NET
 		[VTableSlot(19)]
 		UInt64 CheckFileSignature(string szFileName);
 		[VTableSlot(20)]
-		bool ShowGamepadTextInput(EGamepadTextInputMode eInputMode, EGamepadTextInputLineMode eInputLineMode, string szText, UInt32 uMaxLength, string pUnk);
+		bool ShowGamepadTextInput(EGamepadTextInputMode eInputMode, EGamepadTextInputLineMode eInputLineMode, string pchDescription, UInt32 unCharMax, string pchExistingText);
 		[VTableSlot(21)]
 		UInt32 GetEnteredGamepadTextLength();
 		[VTableSlot(22)]
@@ -60,5 +60,7 @@ namespace Steam4NET
 		string GetSteamUILanguage();
 		[VTableSlot(24)]
 		bool IsSteamRunningInVR();
+		[VTableSlot(25)]
+		void SetOverlayNotificationInset(Int32 arg0, Int32 arg1);
 	};
 }

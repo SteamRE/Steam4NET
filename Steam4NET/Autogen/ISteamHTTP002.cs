@@ -37,7 +37,7 @@ namespace Steam4NET
 		[VTableSlot(12)]
 		bool GetHTTPResponseBodyData(UInt32 hRequest, Byte[] pBodyDataBuffer, UInt32 unBufferSize);
 		[VTableSlot(13)]
-		bool GetHTTPStreamingResponseBodyData(UInt32 hRequest, UInt32 arg1, Byte[] pBodyDataBuffer, UInt32 unBufferSize);
+		bool GetHTTPStreamingResponseBodyData(UInt32 hRequest, UInt32 cOffset, Byte[] pBodyDataBuffer, UInt32 unBufferSize);
 		[VTableSlot(14)]
 		bool ReleaseHTTPRequest(UInt32 hRequest);
 		[VTableSlot(15)]

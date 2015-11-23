@@ -7,10 +7,6 @@ using Steam4NET.Attributes;
 namespace Steam4NET
 {
 
-	public enum AudioPlayback_Status : int
-	{
-	};
-	
 	public enum MediaController_Status : int
 	{
 	};

@@ -92,7 +92,7 @@ namespace Steam4Intermediate.Nodes
 
         private void EmitCodeStruct(Generator generator, int depth, int ident)
         {
-            if (GetName() == "CSteamID" || GetName() == "CGameID")
+            if (Generator.OverrideClasses.Contains(GetName()))
                 return;
 
             generator.EmitLine("[StructLayout(LayoutKind.Sequential,Pack=8)]", depth);

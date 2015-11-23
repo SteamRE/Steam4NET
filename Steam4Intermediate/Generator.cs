@@ -12,6 +12,11 @@ namespace Steam4Intermediate
 {
     class Generator
     {
+        public static List<String> OverrideClasses = new List<string>()
+        {
+            "CGameID", "CSteamID", "SteamParamStringArray_t"
+        };
+
         private static Dictionary<string, Type> NodeTypeMap = new Dictionary<string, Type>()
             {
                 { "TranslationUnit", typeof( TranslationUnitNode ) },
