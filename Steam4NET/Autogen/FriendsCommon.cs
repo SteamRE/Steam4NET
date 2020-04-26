@@ -113,13 +113,22 @@ namespace Steam4NET
 		k_EPersonaStateSnooze = 4,
 		k_EPersonaStateLookingToTrade = 5,
 		k_EPersonaStateLookingToPlay = 6,
-		k_EPersonaStateMax = 7,
+		k_EPersonaStateInvisible = 7,
+        	k_EPersonaStateMax = 8,
 	};
 	
 	public enum EPersonaStateFlag : int
 	{
 		k_EPersonaStateFlagHasRichPresence = 1,
 		k_EPersonaStateFlagInJoinableGame = 2,
+		k_EPersonaStateFlagGolden = 4,
+        	k_EPersonaStateFlagRemotePlayTogether = 8,
+        	k_EPersonaStateFlagClientTypeWeb = 256,
+        	k_EPersonaStateFlagClientTypeMobile = 512,
+        	k_EPersonaStateFlagClientTypeTenfoot = 1024,
+        	k_EPersonaStateFlagClientTypeVR = 2048,
+        	k_EPersonaStateFlagLaunchTypeGamepad = 4096,
+        	k_EPersonaStateFlagLaunchTypeCompatTool = 8192,
 	};
 	
 	public enum EPersonaChange : int
